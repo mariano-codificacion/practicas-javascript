@@ -1,9 +1,15 @@
 
+
 let sum = 0;
-let sumar = prompt("¿Desea practicar sumas de Nros Naturales:?");
-if (sumar != "NO" && sumar != "no" && sumar != null){
-sum = prompt("¿Cuántos Sumandos Quieres?(Entre 2 y 5):");
+let sumar = null;
+function sumandos() {
+    sumar = prompt("¿Desea practicar sumas de Nros Naturales: (Si o No)?");
+    if (sumar != "NO" && sumar != "no" && sumar != null) {
+        sum = parseInt(prompt("¿Cuántos Sumandos Quieres?(Entre 2 y 5):"));
+    }
+    return (sum, sumar);
 }
+sumandos(sum, sumar);
 while (sum <= 5 && sum >= 2 && sumar != "NO" && sumar != "no" && sumar != null) {
     console.clear();
     let s = 0;
@@ -21,8 +27,5 @@ while (sum <= 5 && sum >= 2 && sumar != "NO" && sumar != "no" && sumar != null) 
     } else {
         alert("Incorrecto El Resultado es: " + s);
     }
-    sumar = prompt("¿Desea practicar sumas de Nros Naturales:?");
-    if (sumar != "NO" && sumar != "no" && sumar != null){
-        sum = prompt("¿Cuántos Sumandos Quieres?(Entre 2 y 5):");
-        }
+    sumandos(sum, sumar);
 }
