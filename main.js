@@ -2,7 +2,7 @@
 
 let sum = 0;
 let sumar = null;
-function sumandos() {
+function sumandos(a,b) {
     sumar = prompt("¿Desea practicar sumas de Nros Naturales: (Si o No)?");
     if (sumar != "NO" && sumar != "no" && sumar != null) {
         sum = parseInt(prompt("¿Cuántos Sumandos Quieres?(Entre 2 y 5):"));
