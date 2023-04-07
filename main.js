@@ -19,6 +19,7 @@ while (sum <= 5 && sum >= 2 && sumar != "NO" && sumar != "no" && sumar != null) 
         }
         const rndInt = randomIntFromInterval(1, 6);
         console.log(rndInt);
+        alert ("Los Numeros Son: " + rndInt);
         s = s + rndInt;
     }
     let resultado = parseInt(prompt("Ingrese el resultado de la suma de los numeros mostrados:"));
