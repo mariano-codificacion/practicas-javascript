@@ -9,14 +9,14 @@ function sumandos(a,b) {
     }
     return (sum, sumar);
 }
+function randomIntFromInterval(min, max) { // min and max included 
+    return Math.floor(Math.random() * (max - min + 1) + min)
+}
 sumandos(sum, sumar);
 while (sum <= 5 && sum >= 2 && sumar != "NO" && sumar != "no" && sumar != null) {
     console.clear();
     let s = 0;
     for (let i = 1; i <= sum; i++) {
-        function randomIntFromInterval(min, max) { // min and max included 
-            return Math.floor(Math.random() * (max - min + 1) + min)
-        }
         const rndInt = randomIntFromInterval(1, 6);
         console.log(rndInt);
         alert ("Los Numeros Son: " + rndInt);
