@@ -3,6 +3,7 @@
 let valores = 0;
 let operar = null;
 let n = 0;
+let listaNrosVacia = [];
 class Operacion {
     constructor(valores) {
         this.valores = valores;
@@ -12,12 +13,16 @@ class Operacion {
         while (valores <= 10 && valores >= 2 && operar != "NO" && operar != "no" && operar != null) {
             console.clear();
             let s = 0;
+            listaNrosVacia.splice (0,listaNrosVacia.length);
             for (let i = 1; i <= valores; i++) {
                 const rndInt = randomIntFromInterval(1, 6);
+                listaNrosVacia.push (rndInt);
                 console.log(rndInt);
-                alert("Los Numeros Son: " + rndInt);
+                alert("Sumar: " + rndInt);
                 s = s + rndInt;
             }
+            let listaString = listaNrosVacia.join("+");
+            alert("Los Numeros Son: " + listaString);
             let resultado = parseInt(prompt("Ingrese el resultado de la suma de los numeros mostrados:"));
             if (resultado == s) {
                 alert("Correcto El Resultado es: " + s);
@@ -32,12 +37,16 @@ class Operacion {
         while (valores <= 10 && valores >= 2 && operar != "NO" && operar != "no" && operar != null) {
             console.clear();
             let s = 1;
+            listaNrosVacia.splice (0,listaNrosVacia.length);
             for (let i = 1; i <= valores; i++) {
                 const rndInt = randomIntFromInterval(1, 6);
+                listaNrosVacia.push (rndInt);
                 console.log(rndInt);
                 alert("Los Numeros Son: " + rndInt);
                 s = s * rndInt;
             }
+            let listaString = listaNrosVacia.join("x");
+            alert("Los Numeros Son: " + listaString);
             let resultado = parseInt(prompt("Ingrese el resultado de la multiplicación de los numeros mostrados:"));
             if (resultado == s) {
                 alert("Correcto El Resultado es: " + s);
