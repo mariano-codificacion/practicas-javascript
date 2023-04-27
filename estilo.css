@@ -1,0 +1,18 @@
+.caja {
+    border: 5px solid gray;
+    background-color:rebeccapurple;
+    margin: 1rem;
+    padding: 1rem;
+    display: inline-block;
+}
+
+.dados {
+    width: 200px;
+    height: 160px;
+}
+ .textDado{
+    color: aquamarine;
+    font-size: 20px;
+    font-style: unset;
+    text-align: center;
+ }
