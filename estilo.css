@@ -22,24 +22,27 @@
  }
   .tinki{
     color: black;
+    margin: 1rem;
     font-size: 30px;
     font-style: unset;
     text-align: left;
   }
   .imgMapa{
     border: 5px solid gray;
+    width: 300px;
+    height: 450px;
   }
   .caja1 {
     border: 5px solid gray;
     background-color:thistle ;
     margin: 1rem;
-    padding: 1rem;
+    padding: 0.5rem;
     display: inline-block;
 }
 .textImagen {
     font-family: Arial, Helvetica, sans-serif;
     color: black;
-    font-size: 30px;
+    font-size: 20px;
     font-style: unset;
     text-align: center;
 }
