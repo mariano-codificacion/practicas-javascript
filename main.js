@@ -65,8 +65,8 @@ class dado {
         }
     }
     tirarDado() {
-    contenedor.innerHTML = ``;
-    div.crearDado();
+        contenedor.innerHTML = ``;
+        div.crearDado();
     }
 }
 const dado1 = new dado(1, "img/dado-animado-1.gif");
@@ -76,29 +76,29 @@ const dado4 = new dado(4, "img/dado-animado-4.gif");
 const dado5 = new dado(5, "img/dado-animado-5.gif");
 const dado6 = new dado(6, "img/dado-animado-6.gif");
 const div = new dado();
-const mapa = new dado(0,"img/Mapa_Escuela.jpg");
+const mapa = new dado(0, "img/Mapa_Escuela.jpg");
 
-function titulo (){
-const pie = document.getElementById("pie");
-const parrafo = document.createElement("p");
-parrafo.innerText = "Este es el camino a la Escuela"; 
-parrafo.className = "tinki";
-pie.appendChild(parrafo);
+function titulo() {
+    const pie = document.getElementById("pie");
+    const parrafo = document.createElement("p");
+    parrafo.innerText = "Este es el camino a la Escuela";
+    parrafo.className = "tinki";
+    pie.appendChild(parrafo);
 }
 
-function tiraDado (){
-let tirar = prompt("¿Deseas Tirar el Dado? (Si o No)?");
-div.tirarDado();
+function tiraDado() {
+    let tirar = prompt("¿Deseas Tirar el Dado? (Si o No)?");
+    div.tirarDado();
 }
 
-function mapaEscuela (){
-const contenedor1 = document.getElementById("contenedor1");
-const div1 = document.createElement("div");
-div1.className = "caja1";
-div1.innerHTML = `<p class="textImagen"> Llegamos Jugando a la Escuela: </p>
+function mapaEscuela() {
+    const contenedor1 = document.getElementById("contenedor1");
+    const div1 = document.createElement("div");
+    div1.className = "caja1";
+    div1.innerHTML = `<p class="textImagen"> Llegamos Jugando a la Escuela: </p>
             <img class="imgMapa" src="${mapa.url}"
             alt= "${mapa.url}">`;
-contenedor1.appendChild(div1);
+    contenedor1.appendChild(div1);
 }
 
 class Operacion {
@@ -127,7 +127,7 @@ class Operacion {
             } else {
                 alert("Incorrecto El Resultado es: " + s);
             }
-            
+
         }
     }
 
@@ -150,14 +150,24 @@ class Operacion {
             } else {
                 alert("Incorrecto El Resultado es: " + s);
             }
-            
+
         }
     }
 }
-titulo ()
-tiraDado()
-mapaEscuela()
+function activarBoton() {
 const btnUno = document.getElementById("btn1");
 btnUno.onclick = () => {
-    div.tirarDado();
+div.tirarDado();
 }
+}
+function personaje() {
+const personaje = document.getElementById("imgPer");
+console.log(personaje);
+personaje.style.transform = `translate(270px, -400px)`;
+}
+
+titulo()
+tiraDado()
+mapaEscuela()
+activarBoton()
+personaje()
