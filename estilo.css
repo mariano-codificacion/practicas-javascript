@@ -23,7 +23,7 @@
   .tinki{
     color: black;
     margin: 1rem;
-    font-size: 30px;
+    font-size: 25px;
     font-style: unset;
     text-align: left;
   }
@@ -53,6 +53,6 @@
     margin: 1rem;
 }
 #imgPer{
-  width: 8%;
-  height: 8%;
+  width: 9%;
+  height: 9%;
 }

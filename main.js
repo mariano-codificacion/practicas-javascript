@@ -163,7 +163,7 @@ div.tirarDado();
 function personaje() {
 const personaje = document.getElementById("imgPer");
 console.log(personaje);
-personaje.style.transform = `translate(270px, -400px)`;
+personaje.style.transform = `translate(280px, -370px)`;
 }
 
 titulo()
