@@ -16,6 +16,7 @@ class dado {
     }
 
     crearDado() {
+        console.clear();
         const contenedor = document.getElementById("contenedor");
         let rndInt = randomIntFromInterval(1, 6);
         console.log(rndInt);
@@ -24,48 +25,42 @@ class dado {
             div.className = "caja";
             div.innerHTML = `<p class="textDado"> AVANZA: ${dado1.valor} </p>
                         <img class="dados" src="${dado1.url}"
-                         alt= "${dado1.valor}">
-                         <button> Tirar Dado </button>`;
+                         alt= "${dado1.valor}">`;
             contenedor.appendChild(div);
         } else if (rndInt == 2) {
             const div = document.createElement("div");
             div.className = "caja";
             div.innerHTML = `<p class="textDado"> AVANZA: ${dado2.valor} </p>
                         <img class="dados" src="${dado2.url}"
-                        alt= "${dado2.valor}">
-                        <button> Tirar Dado </button>`;
+                        alt= "${dado2.valor}">`;
             contenedor.appendChild(div);
         } else if (rndInt == 3) {
             const div = document.createElement("div");
             div.className = "caja";
             div.innerHTML = `<p class="textDado"> AVANZA: ${dado3.valor} </p>
                         <img class="dados" src="${dado3.url}"
-                        alt= "${dado3.valor}">
-                        <button> Tirar Dado </button>`;
+                        alt= "${dado3.valor}">`;
             contenedor.appendChild(div);
         } else if (rndInt == 4) {
             const div = document.createElement("div");
             div.className = "caja";
             div.innerHTML = `<p class="textDado"> AVANZA: ${dado4.valor} </p>
                         <img class="dados" src="${dado4.url}"
-                        alt= "${dado4.valor}">
-                        <button> Tirar Dado </button>`;
+                        alt= "${dado4.valor}">`;
             contenedor.appendChild(div);
         } else if (rndInt == 5) {
             const div = document.createElement("div");
             div.className = "caja";
             div.innerHTML = `<p class="textDado"> AVANZA: ${dado5.valor} </p>
                         <img class="dados" src="${dado5.url}"
-                        alt= "${dado5.valor}">
-                        <button> Tirar Dado </button>`;
+                        alt= "${dado5.valor}">`;
             contenedor.appendChild(div);
         } else {
             const div = document.createElement("div");
             div.className = "caja";
             div.innerHTML = `<p class="textDado"> AVANZA: ${dado6.valor} </p>
                         <img class="dados" src="${dado6.url}"
-                        alt= "${dado6.valor}">
-                        <button> Tirar Dado </button>`;
+                        alt= "${dado6.valor}">`;
             contenedor.appendChild(div);
         }
     }
@@ -162,5 +157,7 @@ class Operacion {
 titulo ()
 tiraDado()
 mapaEscuela()
-
-
+const btnUno = document.getElementById("btn1");
+btnUno.onclick = () => {
+    div.tirarDado();
+}
