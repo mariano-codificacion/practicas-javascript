@@ -43,6 +43,7 @@ class dado {
                         <img class="dados" src="${dado3.url}"
                         alt= "${dado3.valor}">`;
             contenedor.appendChild(div);
+            casilla3();
         } else if (rndInt == 4) {
             const div = document.createElement("div");
             div.className = "caja";
@@ -50,6 +51,7 @@ class dado {
                         <img class="dados" src="${dado4.url}"
                         alt= "${dado4.valor}">`;
             contenedor.appendChild(div);
+            casilla4();
         } else if (rndInt == 5) {
             const div = document.createElement("div");
             div.className = "caja";
@@ -57,6 +59,7 @@ class dado {
                         <img class="dados" src="${dado5.url}"
                         alt= "${dado5.valor}">`;
             contenedor.appendChild(div);
+            casilla5();
         } else {
             const div = document.createElement("div");
             div.className = "caja";
@@ -64,6 +67,7 @@ class dado {
                         <img class="dados" src="${dado6.url}"
                         alt= "${dado6.valor}">`;
             contenedor.appendChild(div);
+            casilla6();
         }
     }
     tirarDado() {
@@ -90,7 +94,7 @@ function mapaEscuela() {
     const contenedor1 = document.getElementById("contenedor1");
     const div1 = document.createElement("div");
     div1.className = "caja1";
-    div1.innerHTML = `<p class="textImagen"> Jugando llegamos a la Escuela: </p>
+    div1.innerHTML = `<p class="textImagen"> Jugando, llegamos a la Escuela: </p>
             <img class="imgMapa" src="${mapa.url}"
             alt= "${mapa.url}">`;
     contenedor1.appendChild(div1);
@@ -150,25 +154,48 @@ class Operacion {
     }
 }
 function activarBoton() {
-const btnUno = document.getElementById("btn1");
-btnUno.onclick = () => {
-div.tirarDado();
-}
+    const btnUno = document.getElementById("btn1");
+    btnUno.onclick = () => {
+        div.tirarDado();
+    }
 }
 
 function casilla1() {
-personaje = document.getElementById("imgPer");
-personaje.style.transform = `translate(-35px, 60px)`
-document.getElementById("imgPer")
-personaje.style.transition = "2s"
-} 
-function casilla2 () {
-personaje = document.getElementById("imgPer");
-personaje.style.transform = `translate(-65px, 120px)`
-document.getElementById("imgPer")
-personaje.style.transition = "2s" 
+    personaje = document.getElementById("imgPer");
+    personaje.style.transform = `translate(-35px, 60px)`
+    document.getElementById("imgPer")
+    personaje.style.transition = "2s"
 }
-
+function casilla2() {
+    personaje = document.getElementById("imgPer");
+    personaje.style.transform = `translate(-65px, 120px)`
+    document.getElementById("imgPer")
+    personaje.style.transition = "2s"
+}
+function casilla3() {
+    personaje = document.getElementById("imgPer");
+    personaje.style.transform = `translate(-85px, 150px)`
+    document.getElementById("imgPer")
+    personaje.style.transition = "2s"
+}
+function casilla4() {
+    personaje = document.getElementById("imgPer");
+    personaje.style.transform = `translate(-105px, 200px)`
+    document.getElementById("imgPer")
+    personaje.style.transition = "2s"
+}
+function casilla5() {
+    personaje = document.getElementById("imgPer");
+    personaje.style.transform = `translate(-125px, 230px)`
+    document.getElementById("imgPer")
+    personaje.style.transition = "2s"
+}
+function casilla6() {
+    personaje = document.getElementById("imgPer");
+    personaje.style.transform = `translate(-155px, 220px)`
+    document.getElementById("imgPer")
+    personaje.style.transition = "2s"
+}
 tiraDado()
 mapaEscuela()
 activarBoton()

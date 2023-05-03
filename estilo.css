@@ -4,7 +4,7 @@
 }
 .caja {
     border: 5px solid thistle;
-    background-color:rebeccapurple;
+    background-color: cornflowerblue;
     margin: 0.5rem;
     padding: 0.2rem;
     display: inline-block;
@@ -34,7 +34,7 @@
     display: inline-block;
 }
 .textImagen {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:cursive;
     color: black;
     font-size: 17px;
     font-style: unset;
