@@ -27,6 +27,7 @@ class dado {
                         <img class="dados" src="${dado1.url}"
                          alt= "${dado1.valor}">`;
             contenedor.appendChild(div);
+            casilla1();
         } else if (rndInt == 2) {
             const div = document.createElement("div");
             div.className = "caja";
@@ -34,6 +35,7 @@ class dado {
                         <img class="dados" src="${dado2.url}"
                         alt= "${dado2.valor}">`;
             contenedor.appendChild(div);
+            casilla2();
         } else if (rndInt == 3) {
             const div = document.createElement("div");
             div.className = "caja";
@@ -78,13 +80,6 @@ const dado6 = new dado(6, "img/dado-animado-6.gif");
 const div = new dado();
 const mapa = new dado(0, "img/Mapa_Escuela.jpg");
 
-function titulo() {
-    const pie = document.getElementById("pie");
-    const parrafo = document.createElement("p");
-    parrafo.innerText = "Este es el camino a la Escuela";
-    parrafo.className = "tinki";
-    pie.appendChild(parrafo);
-}
 
 function tiraDado() {
     let tirar = prompt("¿Deseas Tirar el Dado? (Si o No)?");
@@ -95,7 +90,7 @@ function mapaEscuela() {
     const contenedor1 = document.getElementById("contenedor1");
     const div1 = document.createElement("div");
     div1.className = "caja1";
-    div1.innerHTML = `<p class="textImagen"> Llegamos Jugando a la Escuela: </p>
+    div1.innerHTML = `<p class="textImagen"> Jugando llegamos a la Escuela: </p>
             <img class="imgMapa" src="${mapa.url}"
             alt= "${mapa.url}">`;
     contenedor1.appendChild(div1);
@@ -160,14 +155,22 @@ btnUno.onclick = () => {
 div.tirarDado();
 }
 }
-function personaje() {
-const personaje = document.getElementById("imgPer");
-console.log(personaje);
-personaje.style.transform = `translate(280px, -370px)`;
+
+function casilla1() {
+personaje = document.getElementById("imgPer");
+personaje.style.transform = `translate(-35px, 60px)`
+document.getElementById("imgPer")
+personaje.style.transition = "2s"
+} 
+function casilla2 () {
+personaje = document.getElementById("imgPer");
+personaje.style.transform = `translate(-65px, 120px)`
+document.getElementById("imgPer")
+personaje.style.transition = "2s" 
 }
 
-titulo()
 tiraDado()
 mapaEscuela()
 activarBoton()
-personaje()
+
+
