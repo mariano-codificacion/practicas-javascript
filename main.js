@@ -4,7 +4,8 @@ let valores = 0;
 let operar = null;
 let n = 0;
 let listaNrosVacia = [];
-let rndInt;
+let rndInt = 0;
+let rndIntAcum = 0;
 
 function randomIntFromInterval(min, max) { // min and max included 
     return Math.floor(Math.random() * (max - min + 1) + min)
@@ -20,6 +21,8 @@ class dado {
         const contenedor = document.getElementById("contenedor");
         let rndInt = randomIntFromInterval(1, 6);
         console.log(rndInt);
+        rndIntAcum = rndIntAcum + rndInt;
+        console.log(rndIntAcum);
         if (rndInt == 1) {
             const div = document.createElement("div");
             div.className = "caja";
@@ -27,7 +30,7 @@ class dado {
                         <img class="dados" src="${dado1.url}"
                          alt= "${dado1.valor}">`;
             contenedor.appendChild(div);
-            casilla1();
+            
         } else if (rndInt == 2) {
             const div = document.createElement("div");
             div.className = "caja";
@@ -35,7 +38,7 @@ class dado {
                         <img class="dados" src="${dado2.url}"
                         alt= "${dado2.valor}">`;
             contenedor.appendChild(div);
-            casilla2();
+            
         } else if (rndInt == 3) {
             const div = document.createElement("div");
             div.className = "caja";
@@ -43,7 +46,7 @@ class dado {
                         <img class="dados" src="${dado3.url}"
                         alt= "${dado3.valor}">`;
             contenedor.appendChild(div);
-            casilla3();
+            
         } else if (rndInt == 4) {
             const div = document.createElement("div");
             div.className = "caja";
@@ -51,7 +54,7 @@ class dado {
                         <img class="dados" src="${dado4.url}"
                         alt= "${dado4.valor}">`;
             contenedor.appendChild(div);
-            casilla4();
+            
         } else if (rndInt == 5) {
             const div = document.createElement("div");
             div.className = "caja";
@@ -59,7 +62,7 @@ class dado {
                         <img class="dados" src="${dado5.url}"
                         alt= "${dado5.valor}">`;
             contenedor.appendChild(div);
-            casilla5();
+            
         } else {
             const div = document.createElement("div");
             div.className = "caja";
@@ -67,12 +70,15 @@ class dado {
                         <img class="dados" src="${dado6.url}"
                         alt= "${dado6.valor}">`;
             contenedor.appendChild(div);
-            casilla6();
+            
         }
+        
+         
     }
     tirarDado() {
         contenedor.innerHTML = ``;
         div.crearDado();
+        avanzar();
     }
 }
 const dado1 = new dado(1, "img/dado-animado-1.gif");
@@ -159,6 +165,30 @@ function activarBoton() {
         div.tirarDado();
     }
 }
+function avanzar (){
+    if (rndIntAcum == 1) {
+        casilla1();
+    }else if (rndIntAcum == 2) {
+        casilla2();
+    }else if (rndIntAcum == 3) {
+        casilla3();
+    }else if (rndIntAcum == 4) {
+        casilla4();
+    }else if (rndIntAcum == 5) {
+        casilla5();
+    }else if (rndIntAcum == 6) {
+        casilla6();
+    }else if (rndIntAcum == 7) {
+        casilla7();
+    }else if (rndIntAcum == 8) {
+        casilla8();
+    }else if (rndIntAcum == 9) {
+        casilla9();
+    }else if (rndIntAcum == 10) {
+        casilla10();
+
+}
+}
 
 function casilla1() {
     personaje = document.getElementById("imgPer");
@@ -196,8 +226,37 @@ function casilla6() {
     document.getElementById("imgPer")
     personaje.style.transition = "2s"
 }
+function casilla7() {
+    personaje = document.getElementById("imgPer");
+    personaje.style.transform = `translate(-205px, 210px)`
+    document.getElementById("imgPer")
+    personaje.style.transition = "2s"
+}
+function casilla8() {
+    personaje = document.getElementById("imgPer");
+    personaje.style.transform = `translate(-190px, 170px)`
+    document.getElementById("imgPer")
+    personaje.style.transition = "2s"
+}
+function casilla9() {
+    personaje = document.getElementById("imgPer");
+    personaje.style.transform = `translate(-175px, 140px)`
+    document.getElementById("imgPer")
+    personaje.style.transition = "2s"
+}
+function casilla10() {
+    personaje = document.getElementById("imgPer");
+    personaje.style.transform = `translate(-145px, 110px)`
+    document.getElementById("imgPer")
+    personaje.style.transition = "2s"
+}
+
+
+
+
 tiraDado()
 mapaEscuela()
 activarBoton()
+avanzar()
 
 
