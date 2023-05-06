@@ -186,8 +186,34 @@ function avanzar (){
         casilla9();
     }else if (rndIntAcum == 10) {
         casilla10();
+    }else if (rndIntAcum == 11) {
+        casilla11();
+    }else if (rndIntAcum == 12) {
+        casilla12();
+    }else if (rndIntAcum == 13) {
+        casilla13();
+    }else if (rndIntAcum == 14) {
+        casilla14();
+    }else if (rndIntAcum == 15) {
+        casilla15();
+    }else if (rndIntAcum == 16) {
+        casilla16();
+    }else if (rndIntAcum == 17) {
+        casilla17();
+    }else if (rndIntAcum == 18) {
+        casilla18();
+    }else if (rndIntAcum == 19) {
+        casilla19();
+    }else if (rndIntAcum == 20) {
+        casilla20();
+    }else if (rndIntAcum == 21) {
+        casilla21();
+    }else if (rndIntAcum == 22) {
+        casilla22();
+    }else if (rndIntAcum >= 23) {
+        casilla23();
+    }
 
-}
 }
 
 function casilla1() {
@@ -250,7 +276,84 @@ function casilla10() {
     document.getElementById("imgPer")
     personaje.style.transition = "2s"
 }
-
+function casilla11() {
+    personaje = document.getElementById("imgPer");
+    personaje.style.transform = `translate(-125px, 90px)`
+    document.getElementById("imgPer")
+    personaje.style.transition = "2s"
+}
+function casilla12() {
+    personaje = document.getElementById("imgPer");
+    personaje.style.transform = `translate(-105px, 50px)`
+    document.getElementById("imgPer")
+    personaje.style.transition = "2s"
+}
+function casilla13() {
+    personaje = document.getElementById("imgPer");
+    personaje.style.transform = `translate(-170px, 40px)`
+    document.getElementById("imgPer")
+    personaje.style.transition = "2s"
+}
+function casilla14() {
+    personaje = document.getElementById("imgPer");
+    personaje.style.transform = `translate(-160px, 20px)`
+    document.getElementById("imgPer")
+    personaje.style.transition = "2s"
+}
+function casilla15() {
+    personaje = document.getElementById("imgPer");
+    personaje.style.transform = `translate(-150px, -5px)`
+    document.getElementById("imgPer")
+    personaje.style.transition = "2s"
+}
+function casilla16() {
+    personaje = document.getElementById("imgPer");
+    personaje.style.transform = `translate(-145px, -25px)`
+    document.getElementById("imgPer")
+    personaje.style.transition = "2s"
+}
+function casilla17() {
+    personaje = document.getElementById("imgPer");
+    personaje.style.transform = `translate(-125px, -50px)`
+    document.getElementById("imgPer")
+    personaje.style.transition = "2s"
+}
+function casilla18() {
+    personaje = document.getElementById("imgPer");
+    personaje.style.transform = `translate(-105px, -90px)`
+    document.getElementById("imgPer")
+    personaje.style.transition = "2s"
+}
+function casilla19() {
+    personaje = document.getElementById("imgPer");
+    personaje.style.transform = `translate(-135px, -95px)`
+    document.getElementById("imgPer")
+    personaje.style.transition = "2s"
+}
+function casilla20() {
+    personaje = document.getElementById("imgPer");
+    personaje.style.transform = `translate(-160px, -105px)`
+    document.getElementById("imgPer")
+    personaje.style.transition = "2s"
+}
+function casilla21() {
+    personaje = document.getElementById("imgPer");
+    personaje.style.transform = `translate(-215px, -125px)`
+    document.getElementById("imgPer")
+    personaje.style.transition = "2s"
+}
+function casilla22() {
+    personaje = document.getElementById("imgPer");
+    personaje.style.transform = `translate(-255px, -75px)`
+    document.getElementById("imgPer")
+    personaje.style.transition = "2s"
+}
+function casilla23() {
+    personaje = document.getElementById("imgPer");
+    personaje.style.transform = `translate(-195px, -55px)`
+    document.getElementById("imgPer")
+    personaje.style.transition = "2s"
+}
 
 
 
