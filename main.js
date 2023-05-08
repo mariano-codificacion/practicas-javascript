@@ -355,11 +355,57 @@ function casilla23() {
     personaje.style.transition = "2s"
 }
 
-
-
 tiraDado()
 mapaEscuela()
 activarBoton()
 avanzar()
+
+
+let centesimas = 0;
+let segundos = 0;
+let minutos = 0;
+function inicio() {
+	control = setInterval(cronometro,10);
+}
+function parar () {
+	clearInterval(control);
+}
+function cronometro () {
+	if (centesimas < 99) {
+		centesimas++;
+		if (centesimas < 10) { centesimas = "0"+centesimas }
+		Centesimas.innerHTML = ":"+centesimas;
+	}
+	if (centesimas == 99) {
+		centesimas = -1;
+	}
+	if (centesimas == 0) {
+		segundos ++;
+		if (segundos < 10) { segundos = "0"+segundos }
+		Segundos.innerHTML = ":"+segundos;
+	}
+	if (segundos == 59) {
+		segundos = -1;
+	}
+	if ((centesimas == 0)&&(segundos == 0)) {
+		minutos++;
+		if (minutos < 10) { minutos = "0"+minutos }
+		Minutos.innerHTML = " "+minutos;
+	}
+    if (minutos == 1){
+        parar();
+    }
+}
+const listaJugadores = [];
+function agregarJugador(){
+    const jugador = {};
+    jugador.nombre = prompt ("Ingrese su alias o nombre para comenzar:")
+    jugador.escuela = prompt ("Ingresa una escuela que representes:")
+    jugador.tiempo = 0;
+    listaJugadores.push(jugador);
+}
+function guardarLocal(){
+    localStorage.setItem("jugadores",JSON.stringify(listaJugadores));
+}
 
 

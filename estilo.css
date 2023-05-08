@@ -5,14 +5,16 @@
 .caja {
     border: 5px solid thistle;
     background-color: cornflowerblue;
-    margin: 0.5rem;
-    padding: 0.2rem;
-    display: inline-block;
+    padding: 0.5rem;
+    margin: 10px;
+    width: 25vw;
+    height: 20vh;
 }
 
 .dados {
-    width: 120px;
-    height: 70px;
+    width: 15vw;
+    height: 15vh;
+
 }
  .textDado{
     color: aquamarine;
@@ -41,7 +43,7 @@
     text-align: center;
 }
 #btn1{
-    font-size: 15px;
+    font-size: 20px;
     border: 5px solid cornflowerblue;
     background-color:thistle ;
     margin: 0.5rem;
@@ -50,6 +52,34 @@
   width: 50px;
   height: 50px;
   position: absolute;
-  top: 400px;
-  left: 285px;
+  top: 450px;
+  right: 280px;
 }
+
+.otroContenedor{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .contenedorInterno{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .instrucciones {
+    font-size: 15px;
+    font-family: cursive;
+    margin: 10px;
+  }
+  
+  .reloj {
+    margin: 10px;
+    float: left;
+    font-size: 50px;
+    font-family: Courier, sans-serif;
+    color: #363431;
+  }
