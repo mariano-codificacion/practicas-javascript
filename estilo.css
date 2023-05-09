@@ -5,15 +5,15 @@
 .caja {
     border: 5px solid thistle;
     background-color: cornflowerblue;
-    padding: 0.5rem;
+    padding: 0.2rem;
     margin: 10px;
-    width: 25vw;
-    height: 20vh;
+    width: 150px;
+    height: 150px;
 }
 
 .dados {
-    width: 15vw;
-    height: 15vh;
+    width: 150px;
+    height: 120px;
 
 }
  .textDado{
@@ -52,8 +52,8 @@
   width: 50px;
   height: 50px;
   position: absolute;
-  top: 450px;
-  right: 280px;
+  top: 430px;
+  left: 280px;
 }
 
 .otroContenedor{
@@ -77,9 +77,9 @@
   }
   
   .reloj {
-    margin: 10px;
+    margin: 2px;
     float: left;
-    font-size: 50px;
+    font-size: 35px;
     font-family: Courier, sans-serif;
     color: #363431;
   }
