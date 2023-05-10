@@ -90,12 +90,6 @@ const dado6 = new dado(6, "img/dado-animado-6.gif");
 const div = new dado();
 const mapa = new dado(0, "img/Mapa_Escuela.jpg");
 
-
-function tiraDado() {
-    let tirar = prompt("¿Deseas Tirar el Dado? (Si o No)?");
-    div.tirarDado();
-}
-
 function mapaEscuela() {
     const contenedor1 = document.getElementById("contenedor1");
     const div1 = document.createElement("div");
@@ -212,6 +206,7 @@ function avanzar (){
         casilla22();
     }else if (rndIntAcum >= 23) {
         casilla23();
+        parar();
     }
 
 }
@@ -355,10 +350,11 @@ function casilla23() {
     personaje.style.transition = "2s"
 }
 
-tiraDado()
+div.tirarDado();
 mapaEscuela()
 activarBoton()
 avanzar()
+inicio()
 
 
 let centesimas = 0;
@@ -392,20 +388,32 @@ function cronometro () {
 		if (minutos < 10) { minutos = "0"+minutos }
 		Minutos.innerHTML = " "+minutos;
 	}
-    if (minutos == 1){
-        parar();
-    }
+    
 }
+
 const listaJugadores = [];
 function agregarJugador(){
+    let inputAlias = document.getElementById("inputAlias").value;
+    let inputEscuela = document.getElementById("inputEscuela").value;
     const jugador = {};
-    jugador.nombre = prompt ("Ingrese su alias o nombre para comenzar:")
-    jugador.escuela = prompt ("Ingresa una escuela que representes:")
+    jugador.Alias = inputAlias;
+    jugador.Escuela = inputEscuela;
     jugador.tiempo = 0;
     listaJugadores.push(jugador);
+    console.log(listaJugadores);
 }
+
+let botonAgregar = document.getElementById("botonAgregar");
+botonAgregar.addEventListener("click",agregarJugador);
+
 function guardarLocal(){
     localStorage.setItem("jugadores",JSON.stringify(listaJugadores));
+}
+function mostrarLocal(){
+    letJugadorerGuardados = localStorage.getItem("jugador");
+    if (jugadoresGuardados){
+        listaJugadores = JSON.parse(jugadoresGuardados);
+    }
 }
 
 

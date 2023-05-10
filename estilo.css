@@ -6,7 +6,7 @@
     border: 5px solid thistle;
     background-color: cornflowerblue;
     padding: 0.2rem;
-    margin: 10px;
+    margin-left: 10px;
     width: 150px;
     height: 150px;
 }
@@ -43,16 +43,22 @@
     text-align: center;
 }
 #btn1{
-    font-size: 20px;
+    font-size: 15px;
     border: 5px solid cornflowerblue;
     background-color:thistle ;
-    margin: 0.5rem;
+    margin-left: 0.5rem;
 }
+#botonAgregar{
+  font-size: 15px;
+  background-color: cornflowerblue ;
+  margin: 0.5rem;
+}
+
 #imgPer{
   width: 50px;
   height: 50px;
   position: absolute;
-  top: 430px;
+  top: 550px;
   left: 280px;
 }
 
