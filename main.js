@@ -15,9 +15,8 @@ class dado {
         this.valor = valor;
         this.url = url;
     }
-
     crearDado() {
-        console.clear();
+        //console.clear();
         const contenedor = document.getElementById("contenedor");
         let rndInt = randomIntFromInterval(1, 6);
         console.log(rndInt);
@@ -69,16 +68,12 @@ class dado {
             div.innerHTML = `<p class="textDado"> AVANZA: ${dado6.valor} </p>
                         <img class="dados" src="${dado6.url}"
                         alt= "${dado6.valor}">`;
-            contenedor.appendChild(div);
-            
+            contenedor.appendChild(div);   
         }
-        
-         
     }
     tirarDado() {
         contenedor.innerHTML = ``;
         div.crearDado();
-        avanzar();
     }
 }
 const dado1 = new dado(1, "img/dado-animado-1.gif");
@@ -149,7 +144,6 @@ class Operacion {
             } else {
                 alert("Incorrecto El Resultado es: " + s);
             }
-
         }
     }
 }
@@ -157,6 +151,7 @@ function activarBoton() {
     const btnUno = document.getElementById("btn1");
     btnUno.onclick = () => {
         div.tirarDado();
+        avanzar();
     }
 }
 function avanzar (){
@@ -208,9 +203,7 @@ function avanzar (){
         casilla23();
         parar();
     }
-
 }
-
 function casilla1() {
     personaje = document.getElementById("imgPer");
     personaje.style.transform = `translate(-35px, 60px)`
@@ -350,12 +343,8 @@ function casilla23() {
     personaje.style.transition = "2s"
 }
 
-div.tirarDado();
 mapaEscuela()
-activarBoton()
-avanzar()
-inicio()
-
+div.tirarDado();
 
 let centesimas = 0;
 let segundos = 0;
@@ -388,9 +377,7 @@ function cronometro () {
 		if (minutos < 10) { minutos = "0"+minutos }
 		Minutos.innerHTML = " "+minutos;
 	}
-    
 }
-
 const listaJugadores = [];
 function agregarJugador(){
     let inputAlias = document.getElementById("inputAlias").value;
@@ -399,20 +386,23 @@ function agregarJugador(){
     jugador.Alias = inputAlias;
     jugador.Escuela = inputEscuela;
     jugador.tiempo = 0;
+    listaJugadores = JSON.parse(localStorage.getitem("listaJugadores")) || [];
     listaJugadores.push(jugador);
     console.log(listaJugadores);
+    localStorage.setItem("jugadores",JSON.stringify(listaJugadores));
 }
 
 let botonAgregar = document.getElementById("botonAgregar");
 botonAgregar.addEventListener("click",agregarJugador);
 
-function guardarLocal(){
-    localStorage.setItem("jugadores",JSON.stringify(listaJugadores));
-}
+
 function mostrarLocal(){
     letJugadorerGuardados = localStorage.getItem("jugador");
     if (jugadoresGuardados){
         listaJugadores = JSON.parse(jugadoresGuardados);
+        listaJugadores.forEach(jugador => {
+            contenedorJugadores.innerHTML += `<p> ${jugador.alias} - ${jugador.Escuela} </p>`
+        })
     }
 }
 

@@ -6,23 +6,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Primer Entrega</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
     <link rel="stylesheet" href="estilo.css">
 </head>
 
 <body>
-    <div>
-        <div><input type="text" id="inputAlias"></div>
-        <div><input type="text" id="inputEscuela"></div>
-        <button id="botonAgregar">Agregar Jugador</button>
-    </div>
-    <div>
-        <div class="otroContenedor">
-            <div id="contenedor">
+    <section>
+        <h2 class="text-center text-white">Aprende el camino a la Escuela</h2>
+        <p class="text-center text-primary">Ayuda a nuestro heroe a llegar a la Escuela. </p>
+        <p class="text-center text-primary">Escribe tu Alias y Escuela y pulsa agregar jugador para comenzar.</p>
+        <div class="row my-4 text-center">
+            <form class="col-xl-6 col-md-12 text-info" id="formulario">
+                <label for="nombre" class="form-label">Nombre (Alias)</label>
+                <input type="text" class="form-control" id="inputAlias">
+                <label for="text" class="form-label">Escuela representada</label>
+                <input type="text" class="form-control" id="inputEscuela">
+                <button id="botonAgregar">Agregar Jugador</button>
+            </form>
+            <div class="col-xl-6 col-md-12">
+                <img class="img-fluid rounded" src="img/araña.gif" alt="araña">
             </div>
+        </div>
+    </section>
+    <section>
+        <div class="otroContenedor">
+            <div id="contenedor"></div>
             <div class="ContenedorInterno">
                 <p class="instrucciones">
-                    Ayuda a nuestro Heroe a llegar a la escuela para conocer a sus niños, avanza
-                    por el camino marcado y responde los desafios para continuar, el tiempo esta en marcha, suerte
+                    Ayuda a nuestro Heroe a llegar a la escuela para conocer a los niños, avanza
+                    por el camino marcado y responde los desafios para continuar, presiona Tirar dado para poner el
+                    tiempo en marcha, !!Mucha Suerte!!
                 </p>
                 <div>
                     <div class="reloj" id="Minutos"> 00</div>
@@ -31,11 +46,16 @@
                 </div>
             </div>
         </div>
-    </div>
-    <button id="btn1"> Tirar Dado </button>
-    <div id="contenedor1"></div>
+        <button id="btn1"> Tirar Dado </button>
+        <div id="contenedor1"></div>
+        <img id="imgPer" src="img/araña.gif" alt="araña">
+    </section>
+    <!-- JUGADORES RECUPERADOS -->
+    <div id="contenedorJugadores"></div>
 
-    <img id="imgPer" src="img/araña.gif" alt="araña">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
 
     <script src="main.js"></script>
 
