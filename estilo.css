@@ -1,6 +1,6 @@
 
  body{
-    background-color:gray;
+    background-color:black;
 }
 .caja {
     border: 5px solid thistle;
@@ -58,8 +58,8 @@
   width: 50px;
   height: 50px;
   position: absolute;
-  top: 550px;
-  left: 280px;
+  top: 530px;
+  left: 285px;
 }
 
 .otroContenedor{
@@ -77,6 +77,7 @@
   }
   
   .instrucciones {
+    color: white;
     font-size: 15px;
     font-family: cursive;
     margin: 10px;
@@ -87,5 +88,5 @@
     float: left;
     font-size: 35px;
     font-family: Courier, sans-serif;
-    color: #363431;
+    color: yellowgreen;
   }
