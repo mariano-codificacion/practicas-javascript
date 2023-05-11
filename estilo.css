@@ -24,6 +24,7 @@
 }
  
  .imgMapa{
+  
     border: 5px solid gray;
     width: 300px;
     height: 450px;
@@ -43,10 +44,10 @@
     text-align: center;
 }
 #btn1{
-    font-size: 15px;
+    font-size: 10px;
     border: 5px solid cornflowerblue;
     background-color:thistle ;
-    margin-left: 0.5rem;
+    margin: 2px;
 }
 #botonAgregar{
   font-size: 15px;
@@ -77,10 +78,13 @@
   }
   
   .instrucciones {
+    width: 150px;
+    height: 150px;
     color: white;
-    font-size: 15px;
-    font-family: cursive;
     margin: 5px;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif
+  
   }
   
   .reloj {

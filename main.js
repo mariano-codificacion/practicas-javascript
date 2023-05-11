@@ -202,7 +202,7 @@ function avanzar() {
         casilla22();
     } else if (rndIntAcum >= 23) {
         casilla23();
-        parar();
+        mostrarLocal();
     }
 }
 function casilla1() {
