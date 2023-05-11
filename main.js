@@ -29,7 +29,7 @@ class dado {
                         <img class="dados" src="${dado1.url}"
                          alt= "${dado1.valor}">`;
             contenedor.appendChild(div);
-            
+
         } else if (rndInt == 2) {
             const div = document.createElement("div");
             div.className = "caja";
@@ -37,7 +37,7 @@ class dado {
                         <img class="dados" src="${dado2.url}"
                         alt= "${dado2.valor}">`;
             contenedor.appendChild(div);
-            
+
         } else if (rndInt == 3) {
             const div = document.createElement("div");
             div.className = "caja";
@@ -45,7 +45,7 @@ class dado {
                         <img class="dados" src="${dado3.url}"
                         alt= "${dado3.valor}">`;
             contenedor.appendChild(div);
-            
+
         } else if (rndInt == 4) {
             const div = document.createElement("div");
             div.className = "caja";
@@ -53,7 +53,7 @@ class dado {
                         <img class="dados" src="${dado4.url}"
                         alt= "${dado4.valor}">`;
             contenedor.appendChild(div);
-            
+
         } else if (rndInt == 5) {
             const div = document.createElement("div");
             div.className = "caja";
@@ -61,14 +61,14 @@ class dado {
                         <img class="dados" src="${dado5.url}"
                         alt= "${dado5.valor}">`;
             contenedor.appendChild(div);
-            
+
         } else {
             const div = document.createElement("div");
             div.className = "caja";
             div.innerHTML = `<p class="textDado"> AVANZA: ${dado6.valor} </p>
                         <img class="dados" src="${dado6.url}"
                         alt= "${dado6.valor}">`;
-            contenedor.appendChild(div);   
+            contenedor.appendChild(div);
         }
     }
     tirarDado() {
@@ -152,54 +152,55 @@ function activarBoton() {
     btnUno.onclick = () => {
         div.tirarDado();
         avanzar();
+        inicio();
     }
 }
-function avanzar (){
+function avanzar() {
     if (rndIntAcum == 1) {
         casilla1();
-    }else if (rndIntAcum == 2) {
+    } else if (rndIntAcum == 2) {
         casilla2();
-    }else if (rndIntAcum == 3) {
+    } else if (rndIntAcum == 3) {
         casilla3();
-    }else if (rndIntAcum == 4) {
+    } else if (rndIntAcum == 4) {
         casilla4();
-    }else if (rndIntAcum == 5) {
+    } else if (rndIntAcum == 5) {
         casilla5();
-    }else if (rndIntAcum == 6) {
+    } else if (rndIntAcum == 6) {
         casilla6();
-    }else if (rndIntAcum == 7) {
+    } else if (rndIntAcum == 7) {
         casilla7();
-    }else if (rndIntAcum == 8) {
+    } else if (rndIntAcum == 8) {
         casilla8();
-    }else if (rndIntAcum == 9) {
+    } else if (rndIntAcum == 9) {
         casilla9();
-    }else if (rndIntAcum == 10) {
+    } else if (rndIntAcum == 10) {
         casilla10();
-    }else if (rndIntAcum == 11) {
+    } else if (rndIntAcum == 11) {
         casilla11();
-    }else if (rndIntAcum == 12) {
+    } else if (rndIntAcum == 12) {
         casilla12();
-    }else if (rndIntAcum == 13) {
+    } else if (rndIntAcum == 13) {
         casilla13();
-    }else if (rndIntAcum == 14) {
+    } else if (rndIntAcum == 14) {
         casilla14();
-    }else if (rndIntAcum == 15) {
+    } else if (rndIntAcum == 15) {
         casilla15();
-    }else if (rndIntAcum == 16) {
+    } else if (rndIntAcum == 16) {
         casilla16();
-    }else if (rndIntAcum == 17) {
+    } else if (rndIntAcum == 17) {
         casilla17();
-    }else if (rndIntAcum == 18) {
+    } else if (rndIntAcum == 18) {
         casilla18();
-    }else if (rndIntAcum == 19) {
+    } else if (rndIntAcum == 19) {
         casilla19();
-    }else if (rndIntAcum == 20) {
+    } else if (rndIntAcum == 20) {
         casilla20();
-    }else if (rndIntAcum == 21) {
+    } else if (rndIntAcum == 21) {
         casilla21();
-    }else if (rndIntAcum == 22) {
+    } else if (rndIntAcum == 22) {
         casilla22();
-    }else if (rndIntAcum >= 23) {
+    } else if (rndIntAcum >= 23) {
         casilla23();
         parar();
     }
@@ -350,60 +351,65 @@ let centesimas = 0;
 let segundos = 0;
 let minutos = 0;
 function inicio() {
-	control = setInterval(cronometro,10);
+   control = setInterval(cronometro, 10);
 }
-function parar () {
-	clearInterval(control);
+function parar() {
+    clearInterval(control);
 }
-function cronometro () {
-	if (centesimas < 99) {
-		centesimas++;
-		if (centesimas < 10) { centesimas = "0"+centesimas }
-		Centesimas.innerHTML = ":"+centesimas;
-	}
-	if (centesimas == 99) {
-		centesimas = -1;
-	}
-	if (centesimas == 0) {
-		segundos ++;
-		if (segundos < 10) { segundos = "0"+segundos }
-		Segundos.innerHTML = ":"+segundos;
-	}
-	if (segundos == 59) {
-		segundos = -1;
-	}
-	if ((centesimas == 0)&&(segundos == 0)) {
-		minutos++;
-		if (minutos < 10) { minutos = "0"+minutos }
-		Minutos.innerHTML = " "+minutos;
-	}
+function cronometro() {
+    if (centesimas < 99) {
+        centesimas++;
+        if (centesimas < 10) { centesimas = "0" + centesimas }
+        Centesimas.innerHTML = ":" + centesimas;
+    }
+    if (centesimas == 99) {
+        centesimas = -1;
+    }
+    if (centesimas == 0) {
+        segundos++;
+        if (segundos < 10) { segundos = "0" + segundos }
+        Segundos.innerHTML = ":" + segundos;
+    }
+    if (segundos == 59) {
+        segundos = -1;
+    }
+    if ((centesimas == 0) && (segundos == 0)) {
+        minutos++;
+        if (minutos < 10) { minutos = "0" + minutos }
+        Minutos.innerHTML = " " + minutos;
+    }
 }
 const listaJugadores = [];
-function agregarJugador(){
-    let inputAlias = document.getElementById("inputAlias").value;
-    let inputEscuela = document.getElementById("inputEscuela").value;
-    const jugador = {};
-    jugador.Alias = inputAlias;
-    jugador.Escuela = inputEscuela;
-    jugador.tiempo = 0;
-    listaJugadores = JSON.parse(localStorage.getitem("listaJugadores")) || [];
-    listaJugadores.push(jugador);
-    console.log(listaJugadores);
-    localStorage.setItem("jugadores",JSON.stringify(listaJugadores));
+function agregarJugador() {
+    const idFormulario = document.getElementById("formulario");
+    idFormulario.addEventListener("submit", (e) => {
+        e.preventDefault();
+        let inputAlias = document.getElementById("inputAlias").value;
+        let inputEscuela = document.getElementById("inputEscuela").value;
+        const jugador = {};
+        jugador.Alias = inputAlias;
+        jugador.Escuela = inputEscuela;
+        jugador.tiempo = 0;
+        let listaJugadores = JSON.parse(localStorage.getItem(`listaJugadores`)) || [];
+        listaJugadores.push(jugador);
+        console.log(listaJugadores);
+        localStorage.setItem(`listaJugadores`, JSON.stringify(listaJugadores));
+        activarBoton();
+    })
 }
 
 let botonAgregar = document.getElementById("botonAgregar");
-botonAgregar.addEventListener("click",agregarJugador);
+botonAgregar.addEventListener("click", agregarJugador);
 
 
-function mostrarLocal(){
-    letJugadorerGuardados = localStorage.getItem("jugador");
-    if (jugadoresGuardados){
-        listaJugadores = JSON.parse(jugadoresGuardados);
-        listaJugadores.forEach(jugador => {
-            contenedorJugadores.innerHTML += `<p> ${jugador.alias} - ${jugador.Escuela} </p>`
+function mostrarLocal() {
+    const jugadoresGuardados = localStorage.getItem(`listaJugadores`);
+    const carritoJugadores = JSON.parse(jugadoresGuardados);
+    const contenedor3 = document.getElementById("contenedorJugadores");
+    carritoJugadores.forEach(jugador => {
+            contenedor3.innerHTML += `<p> ${jugador.Alias} - ${jugador.Escuela} </p>`
         })
     }
-}
+
 
 
