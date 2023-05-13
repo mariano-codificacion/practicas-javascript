@@ -397,7 +397,6 @@ function agregarJugador() {
 let botonAgregar = document.getElementById("botonAgregar");
 botonAgregar.addEventListener("click", agregarJugador);
 
-activarBoton();
 function mostrarLocal() {
     const jugadoresGuardados = localStorage.getItem(`listaJugadores`);
     const carritoJugadores = JSON.parse(jugadoresGuardados);
