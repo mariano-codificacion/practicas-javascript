@@ -199,6 +199,7 @@ function avanzar() {
     } else if (rndIntAcum >= 23) {
         casilla23();
         parar();
+        btnUno.disable = true;
     }
 }
 function casilla1() {
@@ -416,7 +417,10 @@ function tiempoLocal() {
     console.log(carritoJugadores[indice].tiempo[2]);
     console.log(carritoJugadores);
     localStorage.setItem(`listaJugadores`, JSON.stringify(carritoJugadores));
+    let botonMostrar = document.getElementById("btnJugadores");
+    botonMostrar.addEventListener("click", mostrarLocal);
 }
+
 
 function mostrarLocal() {
     const jugadoresGuardados1 = localStorage.getItem(`listaJugadores`);
@@ -425,9 +429,7 @@ function mostrarLocal() {
     carritoJugadores1.forEach(jugador => {
         contenedor4.innerHTML += `<p> ${jugador.Alias} - ${jugador.Escuela} -${jugador.tiempo}  </p>`
     })
+    botonMostrar.disable = true;
 }
-
-let botonMostrar = document.getElementById("btnJugadores");
-botonMostrar.addEventListener("click", mostrarLocal);
 
 
