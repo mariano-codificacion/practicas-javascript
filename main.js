@@ -350,6 +350,10 @@ function inicio() {
 }
 function parar() {
     clearInterval(control);
+    console.log(minutos);
+    console.log(segundos);
+    console.log(centesimas);
+    mostrarLocal(centesimas, segundos, minutos);
 }
 function cronometro() {
     if (centesimas < 99) {
@@ -384,7 +388,7 @@ function agregarJugador() {
         const jugador = {};
         jugador.Alias = inputAlias;
         jugador.Escuela = inputEscuela;
-        jugador.tiempo = 0;
+        jugador.tiempo = [0,0,0];
         let listaJugadores = JSON.parse(localStorage.getItem(`listaJugadores`)) || [];
         listaJugadores.push(jugador);
         console.log(listaJugadores);
@@ -401,8 +405,18 @@ function mostrarLocal() {
     const jugadoresGuardados = localStorage.getItem(`listaJugadores`);
     const carritoJugadores = JSON.parse(jugadoresGuardados);
     const contenedor3 = document.getElementById("contenedorJugadores");
+    let indice = carritoJugadores.length -1
+    carritoJugadores[indice].tiempo[2] = centesimas;
+    carritoJugadores[indice].tiempo[1] = segundos;
+    carritoJugadores[indice].tiempo[0] = minutos;
+    console.log(indice);
+    console.log (carritoJugadores[indice].tiempo[0]);
+    console.log (carritoJugadores[indice].tiempo[1]);
+    console.log (carritoJugadores[indice].tiempo[2]);
+    console.log (carritoJugadores);
+    localStorage.setItem(`listaJugadores`, JSON.stringify(carritoJugadores));
     carritoJugadores.forEach(jugador => {
-            contenedor3.innerHTML += `<p> ${jugador.Alias} - ${jugador.Escuela} </p>`
+            contenedor3.innerHTML += `<p> ${jugador.Alias} - ${jugador.Escuela} -${jugador.tiempo}  </p>`
         })
     }
 
