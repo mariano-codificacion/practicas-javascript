@@ -16,7 +16,7 @@ class dado {
         this.url = url;
     }
     crearDado() {
-        //console.clear();
+        console.clear();
         const contenedor = document.getElementById("contenedor");
         let rndInt = randomIntFromInterval(1, 6);
         console.log(rndInt);
@@ -71,10 +71,6 @@ class dado {
             contenedor.appendChild(div);
         }
     }
-    tirarDado() {
-        contenedor.innerHTML = ``;
-        div.crearDado();
-    }
 }
 const dado1 = new dado(1, "img/dado-animado-1.gif");
 const dado2 = new dado(2, "img/dado-animado-2.gif");
@@ -84,7 +80,7 @@ const dado5 = new dado(5, "img/dado-animado-5.gif");
 const dado6 = new dado(6, "img/dado-animado-6.gif");
 const div = new dado();
 const mapa = new dado(0, "img/Mapa_Escuela.jpg");
-
+ 
 function mapaEscuela() {
     const contenedor1 = document.getElementById("contenedor1");
     const div1 = document.createElement("div");
@@ -150,9 +146,9 @@ class Operacion {
 function activarBoton() {
     const btnUno = document.getElementById("btn1");
     btnUno.onclick = () => {
-        div.tirarDado();
+        contenedor.innerHTML = ``;
+        div.crearDado();
         avanzar();
-        inicio();
     }
 }
 function avanzar() {
@@ -202,7 +198,7 @@ function avanzar() {
         casilla22();
     } else if (rndIntAcum >= 23) {
         casilla23();
-        mostrarLocal();
+        parar();
     }
 }
 function casilla1() {
@@ -345,7 +341,6 @@ function casilla23() {
 }
 
 mapaEscuela()
-div.tirarDado();
 
 let centesimas = 0;
 let segundos = 0;
@@ -394,6 +389,7 @@ function agregarJugador() {
         listaJugadores.push(jugador);
         console.log(listaJugadores);
         localStorage.setItem(`listaJugadores`, JSON.stringify(listaJugadores));
+        inicio();
         activarBoton();
     })
 }
@@ -401,7 +397,7 @@ function agregarJugador() {
 let botonAgregar = document.getElementById("botonAgregar");
 botonAgregar.addEventListener("click", agregarJugador);
 
-
+activarBoton();
 function mostrarLocal() {
     const jugadoresGuardados = localStorage.getItem(`listaJugadores`);
     const carritoJugadores = JSON.parse(jugadoresGuardados);
@@ -411,5 +407,7 @@ function mostrarLocal() {
         })
     }
 
+let botonMostrar = document.getElementById("btnJugadores");
+botonMostrar.addEventListener("click", mostrarLocal);
 
 

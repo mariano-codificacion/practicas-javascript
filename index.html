@@ -17,16 +17,18 @@
         <h2 class="text-center text-white">Aprende el camino a la Escuela</h2>
         <p class="text-center text-primary">Ayuda a nuestro heroe a llegar a la Escuela. </p>
         <p class="text-center text-primary">Escribe tu Alias y Escuela y pulsa agregar jugador para comenzar.</p>
-        <div class="row my-4 text-center d-inline">
-            <form class="col-xl-6 col-md-12 text-info" id="formulario">
-                <label for="nombre" class="form-label">Nombre (Alias)</label>
-                <input type="text" class="form-control" id="inputAlias">
-                <label for="text" class="form-label">Escuela representada</label>
-                <input type="text" class="form-control" id="inputEscuela">
-                <button id="botonAgregar">Agregar Jugador</button>
-            </form>
-            <div class="col-xl-6 col-md-12">
-                <img class="img-fluid rounded" src="img/araña.gif" alt="araña">
+        <div class="form">
+            <div>
+                <form class="text-info text-center" id="formulario">
+                    <label for="nombre" class="form-label">Nombre (Alias)</label>
+                    <input type="text" class="form-control" id="inputAlias">
+                    <label for="text" class="form-label">Escuela representada</label>
+                    <input type="text" class="form-control" id="inputEscuela">
+                    <button id="botonAgregar">Agregar Jugador</button>
+                </form>
+            </div>
+            <div>
+                <img class="img-fluid rounded" src="img/araña copy.png" alt="araña">
             </div>
         </div>
     </section>
@@ -35,22 +37,24 @@
             <div id="contenedor"></div>
             <div class="ContenedorInterno">
                 <p class="instrucciones">
-                    Avanza por el camino marcado y responde los desafios para continuar, presiona Tirar dado para poner el tiempo en marcha, !!Mucha Suerte!!
+                    Avanza por el camino marcado y responde los desafios para continuar, presiona Tirar dado para poner
+                    el tiempo en marcha, !!Mucha Suerte!!
                 </p>
                 <div>
                     <div class="reloj" id="Minutos"> 00</div>
                     <div class="reloj" id="Segundos">:00</div>
                     <div class="reloj" id="Centesimas">:00</div>
                 </div>
+                <button id="btn1"> Tirar Dado </button>
             </div>
         </div>
-        <button id="btn1"> Tirar Dado </button>
-        <div id="contenedor1"></div>
-        <img id="imgPer" src="img/araña.gif" alt="araña">
+        <div id="contenedor1">
+            <img id="imgPer" src="img/araña.gif" alt="araña">
+        </div>
     </section>
     <!-- JUGADORES RECUPERADOS -->
     <div id="contenedorJugadores">
-        <p>Lista de Jugadores</p>
+        <button id="btnJugadores"> Lista de Jugadores </button>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
