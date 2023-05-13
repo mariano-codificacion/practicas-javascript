@@ -395,6 +395,7 @@ function agregarJugador() {
         localStorage.setItem(`listaJugadores`, JSON.stringify(listaJugadores));
         inicio();
         activarBoton();
+        formulario.reset();
     })
 }
 
