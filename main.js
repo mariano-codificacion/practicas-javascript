@@ -143,8 +143,10 @@ class Operacion {
         }
     }
 }
+let btnuno = 0;
+
 function activarBoton() {
-    const btnUno = document.getElementById("btn1");
+    btnUno = document.getElementById("btn1");
     btnUno.onclick = () => {
         contenedor.innerHTML = ``;
         div.crearDado();
@@ -199,7 +201,7 @@ function avanzar() {
     } else if (rndIntAcum >= 23) {
         casilla23();
         parar();
-        btnUno.disable = true;
+        btnUno.disabled = true;
     }
 }
 function casilla1() {
@@ -402,7 +404,7 @@ function agregarJugador() {
 
 let botonAgregar = document.getElementById("botonAgregar");
 botonAgregar.addEventListener("click", agregarJugador);
-
+let botonMostrar = 0;
 function tiempoLocal() {
     const jugadoresGuardados = localStorage.getItem(`listaJugadores`);
     const carritoJugadores = JSON.parse(jugadoresGuardados);
@@ -417,8 +419,16 @@ function tiempoLocal() {
     console.log(carritoJugadores[indice].tiempo[2]);
     console.log(carritoJugadores);
     localStorage.setItem(`listaJugadores`, JSON.stringify(carritoJugadores));
-    let botonMostrar = document.getElementById("btnJugadores");
-    botonMostrar.addEventListener("click", mostrarLocal);
+    botonMostrar = document.getElementById("btnJugadores");
+    botonMostrar.addEventListener("click", mostrarLocal());
+    Swal.fire({
+        title: "LO HAS CONSEGUIDO¡¡",
+        text: "Te felicitamos por llevar a nuestro heroe a la Escuela",
+        icon: "success",
+        imageUrl: "img/escuela-saldias.jpg",
+        background: "bisque",
+        backdrop: "#b7950b"
+    })
 }
 
 
@@ -429,7 +439,6 @@ function mostrarLocal() {
     carritoJugadores1.forEach(jugador => {
         contenedor4.innerHTML += `<p> ${jugador.Alias} - ${jugador.Escuela} -${jugador.tiempo}  </p>`
     })
-    botonMostrar.disable = true;
+    botonMostrar.disabled = true;
 }
-
 
