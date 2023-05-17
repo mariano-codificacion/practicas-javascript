@@ -353,6 +353,14 @@ function inicio() {
 }
 function parar() {
     clearInterval(control);
+     Swal.fire({
+        title: "LO HAS CONSEGUIDO¡¡",
+        text: "Te felicitamos por llevar a nuestro heroe a la Escuela",
+        icon: "success",
+        imageUrl: "img/escuela-saldias.jpg",
+        background: "bisque",
+        backdrop: "#b7950b"
+     })
     console.log(minutos);
     console.log(segundos);
     console.log(centesimas);
@@ -405,6 +413,7 @@ function agregarJugador() {
 let botonAgregar = document.getElementById("botonAgregar");
 botonAgregar.addEventListener("click", agregarJugador);
 let botonMostrar = 0;
+
 function tiempoLocal() {
     const jugadoresGuardados = localStorage.getItem(`listaJugadores`);
     const carritoJugadores = JSON.parse(jugadoresGuardados);
@@ -420,19 +429,10 @@ function tiempoLocal() {
     console.log(carritoJugadores);
     localStorage.setItem(`listaJugadores`, JSON.stringify(carritoJugadores));
     botonMostrar = document.getElementById("btnJugadores");
-    botonMostrar.addEventListener("click", mostrarLocal());
-    Swal.fire({
-        title: "LO HAS CONSEGUIDO¡¡",
-        text: "Te felicitamos por llevar a nuestro heroe a la Escuela",
-        icon: "success",
-        imageUrl: "img/escuela-saldias.jpg",
-        background: "bisque",
-        backdrop: "#b7950b"
-    })
+    botonMostrar.addEventListener("click", mostrarLocal);
 }
 
-
-function mostrarLocal() {
+ function mostrarLocal() {
     const jugadoresGuardados1 = localStorage.getItem(`listaJugadores`);
     const carritoJugadores1 = JSON.parse(jugadoresGuardados1);
     const contenedor4 = document.getElementById("contenedorJugadores");
