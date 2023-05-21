@@ -469,4 +469,19 @@ function mostrarLocal() {
 
     botonMostrar.disabled = true;
 }
+const listado = document.getElementById("listado");
+const listadoProductos = "json/jugadores.json";
 
+fetch(listadoProductos)
+    .then(respuesta => respuesta.json())
+    .then(datos => {
+        datos.forEach(jugadores => {
+            listado.innerHTML += 
+                                  `<p>${jugadores.id}\n
+                                  ${jugadores.alias} 
+                                  Escuela: ${jugadores.escuela} 
+                                  Tiempo: ${jugadores.tiempo}</p>`
+                               
+        })
+    })
+    .catch(error => console.log(error))
