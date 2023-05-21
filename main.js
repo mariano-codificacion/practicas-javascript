@@ -1,7 +1,6 @@
 
 
 let valores = 0;
-let operar = null;
 let n = 0;
 let listaNrosVacia = [];
 let rndInt = 0;
@@ -91,57 +90,70 @@ function mapaEscuela() {
     contenedor1.appendChild(div1);
 }
 
-class Operacion {
-    constructor(valores) {
-        this.valores = valores;
+function sumar() {
+    let s = 0;
+    listaNrosVacia.splice(0, 4);
+    for (let i = 1; i <= 4; i++) {
+        rndInt = randomIntFromInterval(1, 6);
+        listaNrosVacia.push(rndInt);
+        s = s + rndInt;
     }
-
-    sumar() {
-        while (valores <= 10 && valores >= 2 && operar != "NO" && operar != "no" && operar != null) {
-            console.clear();
-            let s = 0;
-            listaNrosVacia.splice(0, listaNrosVacia.length);
-            for (let i = 1; i <= valores; i++) {
-                let rndInt = randomIntFromInterval(-6, 6);
-                listaNrosVacia.push(rndInt);
-                console.log(rndInt);
-                alert("Sumar: " + rndInt);
-                s = s + rndInt;
-            }
-            listaNrosVacia.sort((a, b) => b - a);
-            let listaString = listaNrosVacia.join(")+(");
-            alert("Los Numeros Son: (" + listaString + ")");
-            let resultado = parseInt(prompt("Ingrese el resultado de la suma de los numeros mostrados:"));
-            if (resultado == s) {
-                alert("Correcto El Resultado es: " + s);
-            } else {
-                alert("Incorrecto El Resultado es: " + s);
-            }
-
-        }
-    }
-
-    multiplicar() {
-        while (valores <= 10 && valores >= 2 && operar != "NO" && operar != "no" && operar != null) {
-            console.clear();
-            let s = 1;
-            listaNrosVacia.splice(0, listaNrosVacia.length);
-            for (let i = 1; i <= valores; i++) {
-                rndInt = randomIntFromInterval(1, 6);
-                listaNrosVacia.push(rndInt);
-                alert("Los Numeros Son: " + rndInt);
-                s = s * rndInt;
-            }
-            let listaString = listaNrosVacia.join("x");
-            alert("Los Numeros Son: " + listaString);
-            let resultado = parseInt(prompt("Ingrese el resultado de la multiplicación de los numeros mostrados:"));
-            if (resultado == s) {
-                alert("Correcto El Resultado es: " + s);
-            } else {
-                alert("Incorrecto El Resultado es: " + s);
+    let listaString = listaNrosVacia.join("+");
+    Swal.fire({
+        title: "La Operacion es:\n" + listaString,
+        icon: "warning",
+        imageUrl: "img/plaza de las americas.jpg",
+        html: `<input type="text" id="resultado" class="swal2-input" placeholder="Resultado">`,
+        confirmButtonText: "Enviar",
+        //showCancelButton: true,
+        //cancelButtonText: "Cancelar"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            let resultado = document.getElementById("resultado").value;
+            let total = parseInt(resultado);
+            if (total == s) {
+                Swal.fire({
+                    title: "Resultado Correcto",
+                    icon: "success",
+                    confirmButtonText: "Aceptar"
+                })
             }
         }
     }
+    )
+}
+
+function multiplicar() {
+    let r=1;
+    listaNrosVacia.splice(0,4);
+    for (let i = 1; i <= 3; i++) {
+        rndInt = randomIntFromInterval(1, 6);
+        listaNrosVacia.push(rndInt);
+        r = r * rndInt;
+    }
+    let listaString = listaNrosVacia.join("x");
+    Swal.fire({
+        title: "La Operacion es:\n" + listaString,
+        icon: "warning",
+        imageUrl: "img/viejacarcel.webp",
+        html: `<input type="text" id="resultado" class="swal2-input" placeholder="Resultado">`,
+        confirmButtonText: "Enviar",
+        //showCancelButton: true,
+        //cancelButtonText: "Cancelar"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            let resultado = document.getElementById("resultado").value;
+            let total = parseInt(resultado);
+            if (total == r) {
+                Swal.fire({
+                    title: "Resultado Correcto",
+                    icon: "success",
+                    confirmButtonText: "Aceptar"
+                })
+            }
+        }
+    }
+    )
 }
 let btnuno = 0;
 
@@ -156,6 +168,7 @@ function activarBoton() {
 function avanzar() {
     if (rndIntAcum == 1) {
         casilla1();
+        sumar();
     } else if (rndIntAcum == 2) {
         casilla2();
     } else if (rndIntAcum == 3) {
@@ -164,20 +177,24 @@ function avanzar() {
         casilla4();
     } else if (rndIntAcum == 5) {
         casilla5();
+        sumar();
     } else if (rndIntAcum == 6) {
         casilla6();
     } else if (rndIntAcum == 7) {
         casilla7();
     } else if (rndIntAcum == 8) {
         casilla8();
+        multiplicar();
     } else if (rndIntAcum == 9) {
         casilla9();
+        multiplicar();
     } else if (rndIntAcum == 10) {
         casilla10();
     } else if (rndIntAcum == 11) {
         casilla11();
     } else if (rndIntAcum == 12) {
         casilla12();
+        multiplicar();
     } else if (rndIntAcum == 13) {
         casilla13();
     } else if (rndIntAcum == 14) {
@@ -190,6 +207,7 @@ function avanzar() {
         casilla17();
     } else if (rndIntAcum == 18) {
         casilla18();
+        multiplicar();
     } else if (rndIntAcum == 19) {
         casilla19();
     } else if (rndIntAcum == 20) {
@@ -353,14 +371,14 @@ function inicio() {
 }
 function parar() {
     clearInterval(control);
-     Swal.fire({
+    Swal.fire({
         title: "LO HAS CONSEGUIDO¡¡",
         text: "Te felicitamos por llevar a nuestro heroe a la Escuela",
         icon: "success",
         imageUrl: "img/escuela-saldias.jpg",
         background: "bisque",
         backdrop: "#b7950b"
-     })
+    })
     console.log(minutos);
     console.log(segundos);
     console.log(centesimas);
@@ -400,6 +418,7 @@ function agregarJugador() {
         jugador.Alias = inputAlias;
         jugador.Escuela = inputEscuela;
         jugador.tiempo = [0, 0, 0];
+        jugador.total = 0;
         let listaJugadores = JSON.parse(localStorage.getItem(`listaJugadores`)) || [];
         listaJugadores.push(jugador);
         console.log(listaJugadores);
@@ -418,27 +437,36 @@ function tiempoLocal() {
     const jugadoresGuardados = localStorage.getItem(`listaJugadores`);
     const carritoJugadores = JSON.parse(jugadoresGuardados);
     const contenedor3 = document.getElementById("contenedorJugadores");
+    if (centesimas < 10) {
+        centesimas = parseInt(centesimas);
+    }
     let indice = carritoJugadores.length - 1
     carritoJugadores[indice].tiempo[2] = centesimas;
     carritoJugadores[indice].tiempo[1] = segundos;
     carritoJugadores[indice].tiempo[0] = minutos;
+
+    let tiempoTotal = (minutos * 6000) + (segundos * 100) + centesimas;
+    tiempoLocal = parseInt(tiempoLocal);
+    carritoJugadores[indice].total = tiempoTotal;
     console.log(indice);
     console.log(carritoJugadores[indice].tiempo[0]);
     console.log(carritoJugadores[indice].tiempo[1]);
     console.log(carritoJugadores[indice].tiempo[2]);
-    console.log(carritoJugadores);
+    console.log(carritoJugadores[indice].total);
     localStorage.setItem(`listaJugadores`, JSON.stringify(carritoJugadores));
     botonMostrar = document.getElementById("btnJugadores");
     botonMostrar.addEventListener("click", mostrarLocal);
 }
 
- function mostrarLocal() {
+function mostrarLocal() {
     const jugadoresGuardados1 = localStorage.getItem(`listaJugadores`);
     const carritoJugadores1 = JSON.parse(jugadoresGuardados1);
     const contenedor4 = document.getElementById("contenedorJugadores");
     carritoJugadores1.forEach(jugador => {
-        contenedor4.innerHTML += `<p> ${jugador.Alias} - ${jugador.Escuela} -${jugador.tiempo}  </p>`
+        carritoJugadores1.sort((a, b) => a.total - b.total);
+        contenedor4.innerHTML += `<p> ${jugador.Alias} - ${jugador.Escuela} - ${jugador.tiempo} - ${jugador.total} </p>`
     })
+
     botonMostrar.disabled = true;
 }
 
