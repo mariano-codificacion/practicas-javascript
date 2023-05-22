@@ -432,7 +432,6 @@ let botonAgregar = document.getElementById("botonAgregar");
 
 botonAgregar.onclick = () => {
     agregarJugador();
-    location.href = "juego.html";
 }
 //let botonAgregar = document.getElementById("botonAgregar");
 //botonAgregar.addEventListener("click", agregarJugador);
@@ -467,8 +466,10 @@ function mostrarLocal() {
     const jugadoresGuardados1 = localStorage.getItem(`listaJugadores`);
     const carritoJugadores1 = JSON.parse(jugadoresGuardados1);
     const contenedor4 = document.getElementById("contenedorJugadores");
+
     carritoJugadores1.forEach(jugador => {
         carritoJugadores1.sort((a, b) => a.total - b.total);
+
         contenedor4.innerHTML += `<p> ${jugador.Alias} - ${jugador.Escuela} - ${jugador.tiempo} - ${jugador.total} </p>`
     })
 
