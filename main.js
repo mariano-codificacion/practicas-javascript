@@ -428,9 +428,14 @@ function agregarJugador() {
         formulario.reset();
     })
 }
-
 let botonAgregar = document.getElementById("botonAgregar");
-botonAgregar.addEventListener("click", agregarJugador);
+
+botonAgregar.onclick = () => {
+    agregarJugador();
+    location.href = "juego.html";
+}
+//let botonAgregar = document.getElementById("botonAgregar");
+//botonAgregar.addEventListener("click", agregarJugador);
 let botonMostrar = 0;
 
 function tiempoLocal() {
