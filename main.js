@@ -89,11 +89,12 @@ function mapaEscuela() {
             alt= "${mapa.url}">`;
     contenedor1.appendChild(div1);
 }
-
+let c = 0;
 function sumar() {
     let s = 0;
-    listaNrosVacia.splice(0, 4);
-    for (let i = 1; i <= 4; i++) {
+    val = randomIntFromInterval(3, 5);
+    listaNrosVacia.splice(0, val);
+    for (let i = 1; i <= val; i++) {
         rndInt = randomIntFromInterval(1, 6);
         listaNrosVacia.push(rndInt);
         s = s + rndInt;
@@ -101,12 +102,10 @@ function sumar() {
     let listaString = listaNrosVacia.join("+");
     Swal.fire({
         title: "La Operacion es:\n" + listaString,
-        icon: "warning",
+        icon: "question",
         imageUrl: "img/plaza de las americas.jpg",
         html: `<input type="text" id="resultado" class="swal2-input" placeholder="Resultado">`,
         confirmButtonText: "Enviar",
-        //showCancelButton: true,
-        //cancelButtonText: "Cancelar"
     }).then((result) => {
         if (result.isConfirmed) {
             let resultado = document.getElementById("resultado").value;
@@ -117,16 +116,26 @@ function sumar() {
                     icon: "success",
                     confirmButtonText: "Aceptar"
                 })
+            } else {
+                c = c + 1;
+                Swal.fire({
+                    title: "Resultado Incorrecto",
+                    icon: "error",
+                    confirmButtonText: "Aceptar"
+                })
+                if (c == 1) {
+                    sumar();
+                }
             }
-        }
-    }
-    )
-}
+            }
 
+        })
+}
 function multiplicar() {
-    let r=1;
-    listaNrosVacia.splice(0,4);
-    for (let i = 1; i <= 3; i++) {
+    let r = 1;
+    val = randomIntFromInterval(3, 4);
+    listaNrosVacia.splice(0, val);
+    for (let i = 1; i <= val; i++) {
         rndInt = randomIntFromInterval(1, 6);
         listaNrosVacia.push(rndInt);
         r = r * rndInt;
@@ -134,12 +143,10 @@ function multiplicar() {
     let listaString = listaNrosVacia.join("x");
     Swal.fire({
         title: "La Operacion es:\n" + listaString,
-        icon: "warning",
+        icon: "question",
         imageUrl: "img/viejacarcel.webp",
         html: `<input type="text" id="resultado" class="swal2-input" placeholder="Resultado">`,
         confirmButtonText: "Enviar",
-        //showCancelButton: true,
-        //cancelButtonText: "Cancelar"
     }).then((result) => {
         if (result.isConfirmed) {
             let resultado = document.getElementById("resultado").value;
@@ -150,11 +157,22 @@ function multiplicar() {
                     icon: "success",
                     confirmButtonText: "Aceptar"
                 })
+            } else {
+                c = c + 1;
+                Swal.fire({
+                    title: "Resultado Incorrecto",
+                    icon: "error",
+                    confirmButtonText: "Aceptar"
+                })
+                if (c == 1) {
+                    multiplicar();
+                }
             }
-        }
+            }
+        })
     }
-    )
-}
+    
+
 let btnuno = 0;
 
 function activarBoton() {
@@ -461,7 +479,8 @@ function tiempoLocal() {
     botonMostrar = document.getElementById("btnJugadores");
     botonMostrar.addEventListener("click", mostrarLocal);
 }
-
+let carritoJugadores2 = 0;
+let carritoPrimeros = 0;
 function mostrarLocal() {
     const jugadoresGuardados1 = localStorage.getItem(`listaJugadores`);
     const carritoJugadores1 = JSON.parse(jugadoresGuardados1);
@@ -469,10 +488,16 @@ function mostrarLocal() {
 
     carritoJugadores1.forEach(jugador => {
         carritoJugadores1.sort((a, b) => a.total - b.total);
-
+        carritoJugadores2 = carritoJugadores1.filter(jugador => jugador.total !== 0)
+        //contenedor4.innerHTML += `<p> ${jugador.Alias} - ${jugador.Escuela} - ${jugador.tiempo} - ${jugador.total} </p>`
+    })
+    carritoJugadores2.forEach(jugador => {
+        carritoPrimeros = carritoJugadores2.slice(1, 15)
+        //contenedor4.innerHTML += `<p> ${jugador.Alias} - ${jugador.Escuela} - ${jugador.tiempo} - ${jugador.total} </p>`
+    })
+    carritoPrimeros.forEach(jugador => {
         contenedor4.innerHTML += `<p> ${jugador.Alias} - ${jugador.Escuela} - ${jugador.tiempo} - ${jugador.total} </p>`
     })
-
     botonMostrar.disabled = true;
 }
 const listado = document.getElementById("listado");
@@ -482,12 +507,12 @@ fetch(listadoProductos)
     .then(respuesta => respuesta.json())
     .then(datos => {
         datos.forEach(jugadores => {
-            listado.innerHTML += 
-                                  `<p>${jugadores.id}\n
+            listado.innerHTML +=
+                `<p>${jugadores.id}\n
                                   ${jugadores.alias} 
                                   Escuela: ${jugadores.escuela} 
                                   Tiempo: ${jugadores.tiempo}</p>`
-                               
+
         })
     })
     .catch(error => console.log(error))
