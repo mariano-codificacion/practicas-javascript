@@ -1,7 +1,25 @@
 
- body{
-    background-color:black;
+html,
+body {
+  height: 100%;
 }
+
+body {
+  background-image: url(img/spiderman.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #999;
+}
+
+div,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: exo, sans-serif;
+}
+
 .caja {
     border: 5px solid thistle;
     background-color: cornflowerblue;
