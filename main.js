@@ -121,7 +121,7 @@ function sumar() {
             } else {
                 c = c + 1;
                     await Swal.fire({
-                    timer:2000,
+                    timer:3000,
                     title: "Resultado Incorrecto",
                     icon: "error",
                     confirmButtonText: "Aceptar"
@@ -166,7 +166,7 @@ function multiplicar() {
             }else {
                 b = b + 1;
                 await Swal.fire({
-                    timer:2000,
+                    timer:3000,
                     title: "Resultado Incorrecto",
                     icon: "error",
                     confirmButtonText: "Aceptar"   
@@ -499,7 +499,7 @@ function mostrarLocal() {
         
     })
     carritoJugadores2.forEach(jugador => {
-        carritoJugadores2.filter(jugador => jugador.total !== undefined)
+        carritoJugadores2 = carritoJugadores2.filter(jugador => jugador.total !== undefined)
         carritoPrimeros = carritoJugadores2.slice(1, 16)
        
     })
