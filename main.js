@@ -94,7 +94,7 @@ function sumar() {
     let s = 0;
     let val = 0;
     val = randomIntFromInterval(3, 5);
-    listaNrosVacia.splice(0, 5);
+    listaNrosVacia.splice(0);
     for (let i = 1; i <= val; i++) {
         rndInt = randomIntFromInterval(1, 6);
         listaNrosVacia.push(rndInt);
@@ -139,7 +139,7 @@ function multiplicar() {
     let r = 1;
     let val = 0;
     val = randomIntFromInterval(3, 4);
-    listaNrosVacia.splice(0, 4);
+    listaNrosVacia.splice(0);
     for (let i = 1; i <= val; i++) {
         rndInt = randomIntFromInterval(1, 6);
         listaNrosVacia.push(rndInt);
@@ -496,12 +496,12 @@ function mostrarLocal() {
     carritoJugadores1.forEach(jugador => {
         carritoJugadores1.sort((a, b) => a.total - b.total);
         carritoJugadores2 = carritoJugadores1.filter(jugador => jugador.total !== 0)
-        //contenedor4.innerHTML += `<p> ${jugador.Alias} - ${jugador.Escuela} - ${jugador.tiempo} - ${jugador.total} </p>`
+        
     })
     carritoJugadores2.forEach(jugador => {
         carritoJugadores2.filter(jugador => jugador.total !== undefined)
         carritoPrimeros = carritoJugadores2.slice(1, 16)
-        //contenedor4.innerHTML += `<p> ${jugador.Alias} - ${jugador.Escuela} - ${jugador.tiempo} - ${jugador.total} </p>`
+       
     })
     carritoPrimeros.forEach(jugador => {
         contenedor4.innerHTML += `<p> ${jugador.Alias} - ${jugador.Escuela} - ${jugador.tiempo} - ${jugador.total} </p>`
