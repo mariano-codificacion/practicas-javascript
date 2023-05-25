@@ -92,8 +92,9 @@ function mapaEscuela() {
 let c = 0;
 function sumar() {
     let s = 0;
+    let val = 0;
     val = randomIntFromInterval(3, 5);
-    listaNrosVacia.splice(0, val);
+    listaNrosVacia.splice(0, 5);
     for (let i = 1; i <= val; i++) {
         rndInt = randomIntFromInterval(1, 6);
         listaNrosVacia.push(rndInt);
@@ -104,9 +105,10 @@ function sumar() {
         title: "La Operacion es:\n" + listaString,
         icon: "question",
         imageUrl: "img/plaza de las americas.jpg",
-        html: `<input type="text" id="resultado" class="swal2-input" placeholder="Resultado">`,
+        html: `<input type="number" id="resultado" class="swal2-input" placeholder="Res">`,
         confirmButtonText: "Enviar",
-    }).then((result) => {
+        heightAuto: true
+    }).then(async (result) => {
         if (result.isConfirmed) {
             let resultado = document.getElementById("resultado").value;
             let total = parseInt(resultado);
@@ -118,7 +120,8 @@ function sumar() {
                 })
             } else {
                 c = c + 1;
-                Swal.fire({
+                    await Swal.fire({
+                    timer:2000,
                     title: "Resultado Incorrecto",
                     icon: "error",
                     confirmButtonText: "Aceptar"
@@ -127,14 +130,16 @@ function sumar() {
                     sumar();
                 }
             }
-            }
+        }
 
-        })
+    })
 }
+let b=0;
 function multiplicar() {
     let r = 1;
+    let val = 0;
     val = randomIntFromInterval(3, 4);
-    listaNrosVacia.splice(0, val);
+    listaNrosVacia.splice(0, 4);
     for (let i = 1; i <= val; i++) {
         rndInt = randomIntFromInterval(1, 6);
         listaNrosVacia.push(rndInt);
@@ -145,9 +150,10 @@ function multiplicar() {
         title: "La Operacion es:\n" + listaString,
         icon: "question",
         imageUrl: "img/viejacarcel.webp",
-        html: `<input type="text" id="resultado" class="swal2-input" placeholder="Resultado">`,
+        html: `<input type="number" id="resultado" class="swal2-input" placeholder="Res">`,
         confirmButtonText: "Enviar",
-    }).then((result) => {
+        heightAuto: true
+    }).then( async (result) => {
         if (result.isConfirmed) {
             let resultado = document.getElementById("resultado").value;
             let total = parseInt(resultado);
@@ -157,21 +163,22 @@ function multiplicar() {
                     icon: "success",
                     confirmButtonText: "Aceptar"
                 })
-            } else {
-                c = c + 1;
-                Swal.fire({
+            }else {
+                b = b + 1;
+                await Swal.fire({
+                    timer:2000,
                     title: "Resultado Incorrecto",
                     icon: "error",
-                    confirmButtonText: "Aceptar"
+                    confirmButtonText: "Aceptar"   
                 })
-                if (c == 1) {
+                if (b == 1) {
                     multiplicar();
                 }
             }
-            }
-        })
-    }
-    
+        }
+    })
+}
+
 
 let btnuno = 0;
 
@@ -492,7 +499,8 @@ function mostrarLocal() {
         //contenedor4.innerHTML += `<p> ${jugador.Alias} - ${jugador.Escuela} - ${jugador.tiempo} - ${jugador.total} </p>`
     })
     carritoJugadores2.forEach(jugador => {
-        carritoPrimeros = carritoJugadores2.slice(1, 15)
+        carritoJugadores2.filter(jugador => jugador.total !== undefined)
+        carritoPrimeros = carritoJugadores2.slice(1, 16)
         //contenedor4.innerHTML += `<p> ${jugador.Alias} - ${jugador.Escuela} - ${jugador.tiempo} - ${jugador.total} </p>`
     })
     carritoPrimeros.forEach(jugador => {
@@ -501,9 +509,9 @@ function mostrarLocal() {
     botonMostrar.disabled = true;
 }
 const listado = document.getElementById("listado");
-const listadoProductos = "json/jugadores.json";
+const listadoJugadores = "json/jugadores.json";
 
-fetch(listadoProductos)
+fetch(listadoJugadores)
     .then(respuesta => respuesta.json())
     .then(datos => {
         datos.forEach(jugadores => {
