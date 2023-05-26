@@ -89,13 +89,54 @@ function mapaEscuela() {
             alt= "${mapa.url}">`;
     contenedor1.appendChild(div1);
 }
-let c = 0;
-function sumar() {
+let c= 0;
+function sumar4() {
     let s = 0;
-    let val = 0;
-    val = randomIntFromInterval(3, 5);
     listaNrosVacia.splice(0);
-    for (let i = 1; i <= val; i++) {
+    for (let i = 1; i <= 4; i++) {
+        rndInt = randomIntFromInterval(1, 6);
+        listaNrosVacia.push(rndInt);
+        s = s + rndInt;
+    }
+    let listaString = listaNrosVacia.join("+");
+    Swal.fire({
+        title: "La Operacion es:\n" + listaString,
+        icon: "question",
+        imageUrl: "img/EScuela-Roque.jpg",
+        html: `<input type="number" id="resultado" class="swal2-input" placeholder="Res">`,
+        confirmButtonText: "Enviar",
+        heightAuto: true
+    }).then(async (result) => {
+        if (result.isConfirmed) {
+            let resultado = document.getElementById("resultado").value;
+            let total = parseInt(resultado);
+            if (total == s) {
+                Swal.fire({
+                    title: "Resultado Correcto",
+                    icon: "success",
+                    confirmButtonText: "Aceptar"
+                })
+            } else {
+                c = c + 1;
+                    await Swal.fire({
+                    timer:3000,
+                    title: "Resultado Incorrecto",
+                    icon: "error",
+                    confirmButtonText: "Aceptar"
+                })
+                if (c == 1) {
+                    sumar4();
+                }
+            }
+        }
+
+    })
+}
+let d=0;
+function sumar5() {
+    let s = 0;
+    listaNrosVacia.splice(0);
+    for (let i = 1; i <= 5; i++) {
         rndInt = randomIntFromInterval(1, 6);
         listaNrosVacia.push(rndInt);
         s = s + rndInt;
@@ -119,28 +160,27 @@ function sumar() {
                     confirmButtonText: "Aceptar"
                 })
             } else {
-                c = c + 1;
+                d = d + 1;
                     await Swal.fire({
                     timer:3000,
                     title: "Resultado Incorrecto",
                     icon: "error",
                     confirmButtonText: "Aceptar"
                 })
-                if (c == 1) {
-                    sumar();
+                if (d == 1) {
+                    sumar5();
                 }
             }
         }
 
     })
 }
+
 let b=0;
-function multiplicar() {
+function multiplicar3() {
     let r = 1;
-    let val = 0;
-    val = randomIntFromInterval(3, 4);
     listaNrosVacia.splice(0);
-    for (let i = 1; i <= val; i++) {
+    for (let i = 1; i <= 3; i++) {
         rndInt = randomIntFromInterval(1, 6);
         listaNrosVacia.push(rndInt);
         r = r * rndInt;
@@ -172,7 +212,7 @@ function multiplicar() {
                     confirmButtonText: "Aceptar"   
                 })
                 if (b == 1) {
-                    multiplicar();
+                    multiplicar3();
                 }
             }
         }
@@ -180,6 +220,91 @@ function multiplicar() {
 }
 
 
+let e=0;
+function multiplicar4() {
+    let r = 1;
+    listaNrosVacia.splice(0);
+    for (let i = 1; i <= 4; i++) {
+        rndInt = randomIntFromInterval(1, 6);
+        listaNrosVacia.push(rndInt);
+        r = r * rndInt;
+    }
+    let listaString = listaNrosVacia.join("x");
+    Swal.fire({
+        title: "La Operacion es:\n" + listaString,
+        icon: "question",
+        imageUrl: "img/viejacarcel.webp",
+        html: `<input type="number" id="resultado" class="swal2-input" placeholder="Res">`,
+        confirmButtonText: "Enviar",
+        heightAuto: true
+    }).then( async (result) => {
+        if (result.isConfirmed) {
+            let resultado = document.getElementById("resultado").value;
+            let total = parseInt(resultado);
+            if (total == r) {
+                Swal.fire({
+                    title: "Resultado Correcto",
+                    icon: "success",
+                    confirmButtonText: "Aceptar"
+                })
+            }else {
+                e = e + 1;
+                await Swal.fire({
+                    timer:3000,
+                    title: "Resultado Incorrecto",
+                    icon: "error",
+                    confirmButtonText: "Aceptar"   
+                })
+                if (e == 1) {
+                    multiplicar4();
+                }
+            }
+        }
+    })
+}
+
+let f=0;
+function multiplicar5() {
+    let r = 1;
+    listaNrosVacia.splice(0);
+    for (let i = 1; i <= 5; i++) {
+        rndInt = randomIntFromInterval(1, 6);
+        listaNrosVacia.push(rndInt);
+        r = r * rndInt;
+    }
+    let listaString = listaNrosVacia.join("x");
+    Swal.fire({
+        title: "La Operacion es:\n" + listaString,
+        icon: "question",
+        imageUrl: "img/escuelaespecial.jpg",
+        html: `<input type="number" id="resultado" class="swal2-input" placeholder="Res">`,
+        confirmButtonText: "Enviar",
+        heightAuto: true
+    }).then( async (result) => {
+        if (result.isConfirmed) {
+            let resultado = document.getElementById("resultado").value;
+            let total = parseInt(resultado);
+            if (total == r) {
+                Swal.fire({
+                    title: "Resultado Correcto",
+                    icon: "success",
+                    confirmButtonText: "Aceptar"
+                })
+            }else {
+                f = f + 1;
+                await Swal.fire({
+                    timer:3000,
+                    title: "Resultado Incorrecto",
+                    icon: "error",
+                    confirmButtonText: "Aceptar"   
+                })
+                if (f == 1) {
+                    multiplicar5();
+                }
+            }
+        }
+    })
+}
 let btnuno = 0;
 
 function activarBoton() {
@@ -193,7 +318,7 @@ function activarBoton() {
 function avanzar() {
     if (rndIntAcum == 1) {
         casilla1();
-        sumar();
+        sumar4();
     } else if (rndIntAcum == 2) {
         casilla2();
     } else if (rndIntAcum == 3) {
@@ -202,24 +327,24 @@ function avanzar() {
         casilla4();
     } else if (rndIntAcum == 5) {
         casilla5();
-        sumar();
+        sumar5();
     } else if (rndIntAcum == 6) {
         casilla6();
     } else if (rndIntAcum == 7) {
         casilla7();
     } else if (rndIntAcum == 8) {
         casilla8();
-        multiplicar();
+        multiplicar3();
     } else if (rndIntAcum == 9) {
         casilla9();
-        multiplicar();
+        multiplicar4();
     } else if (rndIntAcum == 10) {
         casilla10();
     } else if (rndIntAcum == 11) {
         casilla11();
     } else if (rndIntAcum == 12) {
         casilla12();
-        multiplicar();
+        multiplicar5();
     } else if (rndIntAcum == 13) {
         casilla13();
     } else if (rndIntAcum == 14) {
@@ -232,7 +357,6 @@ function avanzar() {
         casilla17();
     } else if (rndIntAcum == 18) {
         casilla18();
-        multiplicar();
     } else if (rndIntAcum == 19) {
         casilla19();
     } else if (rndIntAcum == 20) {
