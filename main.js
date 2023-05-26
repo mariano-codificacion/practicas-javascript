@@ -89,7 +89,7 @@ function mapaEscuela() {
             alt= "${mapa.url}">`;
     contenedor1.appendChild(div1);
 }
-let c= 0;
+let c = 0;
 function sumar4() {
     let s = 0;
     listaNrosVacia.splice(0);
@@ -118,8 +118,8 @@ function sumar4() {
                 })
             } else {
                 c = c + 1;
-                    await Swal.fire({
-                    timer:3000,
+                await Swal.fire({
+                    timer: 3000,
                     title: "Resultado Incorrecto",
                     icon: "error",
                     confirmButtonText: "Aceptar"
@@ -132,7 +132,7 @@ function sumar4() {
 
     })
 }
-let d=0;
+let d = 0;
 function sumar5() {
     let s = 0;
     listaNrosVacia.splice(0);
@@ -161,8 +161,8 @@ function sumar5() {
                 })
             } else {
                 d = d + 1;
-                    await Swal.fire({
-                    timer:3000,
+                await Swal.fire({
+                    timer: 3000,
                     title: "Resultado Incorrecto",
                     icon: "error",
                     confirmButtonText: "Aceptar"
@@ -176,7 +176,7 @@ function sumar5() {
     })
 }
 
-let b=0;
+let b = 0;
 function multiplicar3() {
     let r = 1;
     listaNrosVacia.splice(0);
@@ -193,7 +193,7 @@ function multiplicar3() {
         html: `<input type="number" id="resultado" class="swal2-input" placeholder="Res">`,
         confirmButtonText: "Enviar",
         heightAuto: true
-    }).then( async (result) => {
+    }).then(async (result) => {
         if (result.isConfirmed) {
             let resultado = document.getElementById("resultado").value;
             let total = parseInt(resultado);
@@ -203,13 +203,13 @@ function multiplicar3() {
                     icon: "success",
                     confirmButtonText: "Aceptar"
                 })
-            }else {
+            } else {
                 b = b + 1;
                 await Swal.fire({
-                    timer:3000,
+                    timer: 3000,
                     title: "Resultado Incorrecto",
                     icon: "error",
-                    confirmButtonText: "Aceptar"   
+                    confirmButtonText: "Aceptar"
                 })
                 if (b == 1) {
                     multiplicar3();
@@ -219,8 +219,7 @@ function multiplicar3() {
     })
 }
 
-
-let e=0;
+let e = 0;
 function multiplicar4() {
     let r = 1;
     listaNrosVacia.splice(0);
@@ -237,7 +236,7 @@ function multiplicar4() {
         html: `<input type="number" id="resultado" class="swal2-input" placeholder="Res">`,
         confirmButtonText: "Enviar",
         heightAuto: true
-    }).then( async (result) => {
+    }).then(async (result) => {
         if (result.isConfirmed) {
             let resultado = document.getElementById("resultado").value;
             let total = parseInt(resultado);
@@ -247,13 +246,13 @@ function multiplicar4() {
                     icon: "success",
                     confirmButtonText: "Aceptar"
                 })
-            }else {
+            } else {
                 e = e + 1;
                 await Swal.fire({
-                    timer:3000,
+                    timer: 3000,
                     title: "Resultado Incorrecto",
                     icon: "error",
-                    confirmButtonText: "Aceptar"   
+                    confirmButtonText: "Aceptar"
                 })
                 if (e == 1) {
                     multiplicar4();
@@ -263,7 +262,7 @@ function multiplicar4() {
     })
 }
 
-let f=0;
+let f = 0;
 function multiplicar5() {
     let r = 1;
     listaNrosVacia.splice(0);
@@ -280,7 +279,7 @@ function multiplicar5() {
         html: `<input type="number" id="resultado" class="swal2-input" placeholder="Res">`,
         confirmButtonText: "Enviar",
         heightAuto: true
-    }).then( async (result) => {
+    }).then(async (result) => {
         if (result.isConfirmed) {
             let resultado = document.getElementById("resultado").value;
             let total = parseInt(resultado);
@@ -290,13 +289,13 @@ function multiplicar5() {
                     icon: "success",
                     confirmButtonText: "Aceptar"
                 })
-            }else {
+            } else {
                 f = f + 1;
                 await Swal.fire({
-                    timer:3000,
+                    timer: 3000,
                     title: "Resultado Incorrecto",
                     icon: "error",
-                    confirmButtonText: "Aceptar"   
+                    confirmButtonText: "Aceptar"
                 })
                 if (f == 1) {
                     multiplicar5();
@@ -305,6 +304,53 @@ function multiplicar5() {
         }
     })
 }
+
+let g = 0;
+function restar5() {
+    let s = 0;
+    listaNrosVacia.splice(0);
+    for (let i = 1; i <= 5; i++) {
+        rndInt = randomIntFromInterval(-6, 6);
+        listaNrosVacia.push(rndInt);
+        s = s + rndInt;
+    }
+    listaNrosVacia.sort((a, b) => b - a);
+    listaString = listaNrosVacia.join(")+(");
+    Swal.fire({
+        title: "La Operacion es:\n" + "(" + listaString + ")",
+        icon: "question",
+        imageUrl: "img/paseodelasartes.jpg",
+        html: `<input type="number" id="resultado" class="swal2-input" placeholder="Res">`,
+        confirmButtonText: "Enviar",
+        heightAuto: true
+    }).then(async (result) => {
+        if (result.isConfirmed) {
+            let resultado = document.getElementById("resultado").value;
+            let total = parseInt(resultado);
+            if (total == s) {
+                Swal.fire({
+                    title: "Resultado Correcto",
+                    icon: "success",
+                    confirmButtonText: "Aceptar"
+                })
+            } else {
+                g = g + 1;
+                await Swal.fire({
+                    timer: 3000,
+                    title: "Resultado Incorrecto",
+                    icon: "error",
+                    confirmButtonText: "Aceptar"
+                })
+                if (g == 1) {
+                    restar5();
+                }
+            }
+        }
+
+    })
+}
+
+
 let btnuno = 0;
 
 function activarBoton() {
@@ -357,6 +403,7 @@ function avanzar() {
         casilla17();
     } else if (rndIntAcum == 18) {
         casilla18();
+        restar5();
     } else if (rndIntAcum == 19) {
         casilla19();
     } else if (rndIntAcum == 20) {
@@ -620,12 +667,12 @@ function mostrarLocal() {
     carritoJugadores1.forEach(jugador => {
         carritoJugadores1.sort((a, b) => a.total - b.total);
         carritoJugadores2 = carritoJugadores1.filter(jugador => jugador.total !== 0)
-        
+
     })
     carritoJugadores2.forEach(jugador => {
         carritoJugadores2 = carritoJugadores2.filter(jugador => jugador.total !== undefined)
         carritoPrimeros = carritoJugadores2.slice(1, 16)
-       
+
     })
     carritoPrimeros.forEach(jugador => {
         contenedor4.innerHTML += `<p> ${jugador.Alias} - ${jugador.Escuela} - ${jugador.tiempo} - ${jugador.total} </p>`
