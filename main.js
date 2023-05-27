@@ -103,7 +103,7 @@ function sumar4() {
         title: "La Operacion es:\n" + listaString,
         icon: "question",
         imageUrl: "img/EScuela-Roque.jpg",
-        html: `<input type="number" id="resultado" placeholder="Resultado">`,
+        html: `<input type="number" id="resultado" class="swal2-input" placeholder="Resultado">`,
         confirmButtonText: "Enviar",
         heightAuto: true
     }).then(async (result) => {
@@ -146,7 +146,7 @@ function sumar5() {
         title: "La Operacion es:\n" + listaString,
         icon: "question",
         imageUrl: "img/plaza de las americas.jpg", 
-        html: `<input type="number" id="resultado" placeholder="Resultado">`,
+        html: `<input type="number" id="resultado" class="swal2-input" placeholder="Resultado">`,
         confirmButtonText: "Enviar",
         heightAuto: true
     }).then(async (result) => {
@@ -190,7 +190,7 @@ function multiplicar3() {
         title: "La Operacion es:\n" + listaString,
         icon: "question",
         imageUrl: "img/viejacarcel.webp",
-        html: `<input type="number" id="resultado" placeholder="Resultado">`,
+        html: `<input type="number" id="resultado" class="swal2-input" placeholder="Resultado">`,
         confirmButtonText: "Enviar",
         heightAuto: true
     }).then(async (result) => {
@@ -233,7 +233,7 @@ function multiplicar4() {
         title: "La Operacion es:\n" + listaString,
         icon: "question",
         imageUrl: "img/viejacarcel.webp",
-        html: `<input type="number" id="resultado" placeholder="Resultado">`,
+        html: `<input type="number" id="resultado" class="swal2-input" placeholder="Resultado">`,
         confirmButtonText: "Enviar",
         heightAuto: true
     }).then(async (result) => {
@@ -276,7 +276,7 @@ function multiplicar5() {
         title: "La Operacion es:\n" + listaString,
         icon: "question",
         imageUrl: "img/escuelaespecial.jpg",
-        html: `<input type="number" id="resultado" placeholder="Resultado">`,
+        html: `<input type="number" id="resultado" class="swal2-input" placeholder="Resultado">`,
         confirmButtonText: "Enviar",
         heightAuto: true
     }).then(async (result) => {
@@ -320,7 +320,7 @@ function restar5() {
         title: "La Operacion es:\n" + "(" + listaString + ")",
         icon: "question",
         imageUrl: "img/paseodelasartes.jpg",
-        html: `<input type="number" id="resultado" placeholder="Resultado">`,
+        html: `<input type="number" id="resultado" class="swal2-input" placeholder="Resultado">`,
         confirmButtonText: "Enviar",
         heightAuto: true
     }).then(async (result) => {
